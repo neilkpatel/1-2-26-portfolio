@@ -142,7 +142,8 @@ function App() {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="group relative bg-slate-800/30 backdrop-blur-xl rounded-2xl border border-slate-700 overflow-hidden hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20"
+                  onClick={() => window.open(project.demo, '_blank')}
+                  className="group relative bg-slate-800/30 backdrop-blur-xl rounded-2xl border border-slate-700 overflow-hidden hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 cursor-pointer"
                 >
                   {/* Project Image Placeholder */}
                   <div className="relative h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/20 overflow-hidden">
@@ -179,21 +180,17 @@ function App() {
 
                     {/* Links */}
                     <div className="flex gap-4">
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2"
-                      >
+                      <div className="flex-1 text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
                         View Live
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
-                      </a>
+                      </div>
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
                         className="px-6 py-3 bg-slate-700/50 border border-slate-600 text-white rounded-xl hover:bg-slate-700 hover:border-slate-500 transition-all duration-300 flex items-center gap-2"
                       >
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
