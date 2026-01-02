@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 // Build timestamp
 const BUILD_TIME = new Date().toLocaleString('en-US', {
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      <Analytics />
       {/* Animated Grid Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-20">
         <div className="absolute inset-0" style={{
