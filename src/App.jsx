@@ -279,7 +279,7 @@ function App() {
               </div>
             </div>
             <p className="text-slate-400 text-sm mb-2">
-              Built with React, Vite & Tailwind CSS
+              Built with React, Vite & Tailwind CSS • Auto-deployed from GitHub
             </p>
             <p className="text-slate-500 text-xs mb-2">
               Last updated: {BUILD_TIME} EST
