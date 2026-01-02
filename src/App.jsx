@@ -148,7 +148,7 @@ function App() {
                   {/* Project Image Placeholder */}
                   <div className="relative h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/20 overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-6xl opacity-20">🚀</div>
+                      <div className="text-6xl opacity-20">{project.icon || '🚀'}</div>
                     </div>
                     <div className="absolute top-4 right-4">
                       <span className="px-3 py-1.5 bg-slate-900/90 backdrop-blur-sm border border-slate-700 rounded-full text-xs font-mono text-blue-400">

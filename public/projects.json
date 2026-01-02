@@ -5,7 +5,8 @@
     "description": "Real-time countdown to New Year's Day with year progress tracker and particle visualization system",
     "github": "https://github.com/neilkpatel/1-1-26-nye-countdown",
     "demo": "https://1126nyecountdown.vercel.app",
-    "tags": ["React", "TypeScript", "Framer Motion", "Tailwind"]
+    "tags": ["React", "TypeScript", "Framer Motion", "Tailwind"],
+    "icon": "🎆"
   },
   {
     "name": "Sports Scores",
@@ -13,7 +14,8 @@
     "description": "Live sports scores and game tracking application",
     "github": "https://github.com/neilkpatel/12-31-25-sports-scores",
     "demo": "https://123125sportsscores.vercel.app",
-    "tags": ["React", "Vite", "Tailwind"]
+    "tags": ["React", "Vite", "Tailwind"],
+    "icon": "🏀"
   },
   {
     "name": "Jackson Hole Snow Tracker",
@@ -21,6 +23,7 @@
     "description": "Real-time snow conditions dashboard with vintage split-flap display leaderboard and dynamic snowfall visualization",
     "github": "https://github.com/neilkpatel/12_28_jackson_hole_snow_tracker",
     "demo": "https://1228jacksonholesnowtracker.vercel.app",
-    "tags": ["Vanilla JS", "Canvas API", "Web Scraping", "CSS3"]
+    "tags": ["Vanilla JS", "Canvas API", "Web Scraping", "CSS3"],
+    "icon": "⛷️"
   }
 ]
