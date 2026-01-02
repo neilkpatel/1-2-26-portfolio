@@ -14,5 +14,13 @@
     "github": "https://github.com/neilkpatel/12-31-25-sports-scores",
     "demo": "https://123125sportsscores.vercel.app",
     "tags": ["React", "Vite", "Tailwind"]
+  },
+  {
+    "name": "Jackson Hole Snow Tracker",
+    "date": "12/28/25",
+    "description": "Real-time snow conditions dashboard with vintage split-flap display leaderboard and dynamic snowfall visualization",
+    "github": "https://github.com/neilkpatel/12_28_jackson_hole_snow_tracker",
+    "demo": "https://1228jacksonholesnowtracker.vercel.app",
+    "tags": ["Vanilla JS", "Canvas API", "Web Scraping", "CSS3"]
   }
 ]
