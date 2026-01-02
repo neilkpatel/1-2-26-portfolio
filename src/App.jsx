@@ -33,10 +33,14 @@ function App() {
               NP
             </div>
             <div className="hidden md:flex gap-8">
-              {['Home', 'About', 'Projects', 'Contact'].map((item) => (
+              {['Home', 'Projects', 'Contact'].map((item) => (
                 <button
                   key={item}
-                  onClick={() => setActiveSection(item.toLowerCase())}
+                  onClick={() => {
+                    const sectionId = item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase();
+                    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+                    setActiveSection(item.toLowerCase());
+                  }}
                   className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
                 >
                   {item}
@@ -50,9 +54,9 @@ function App() {
       {/* Content */}
       <div className="relative z-10 pt-16">
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center justify-center px-6">
+        <section id="hero" className="min-h-screen flex items-center justify-center px-6">
           <div className="container mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Left Column - Text */}
               <div className="space-y-8">
                 <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium">
@@ -96,7 +100,7 @@ function App() {
               </div>
 
               {/* Right Column - Visual Element */}
-              <div className="relative">
+              <div className="relative lg:mt-8">
                 <div className="relative w-full">
                   {/* Decorative Elements */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-3xl"></div>
@@ -205,7 +209,7 @@ function App() {
         </section>
 
         {/* Contact Section */}
-        <section className="py-24 px-6 bg-slate-900/50">
+        <section id="contact" className="py-24 px-6 bg-slate-900/50">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-4xl font-bold text-white mb-6">Let's Build Something Together</h2>
             <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
