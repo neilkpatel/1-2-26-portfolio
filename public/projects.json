@@ -1,5 +1,14 @@
 [
   {
+    "name": "News Tracker",
+    "date": "1/2/26",
+    "description": "Real-time news aggregator tracking latest articles for Adobe, Coal Energy, and GLP-1s with smart ranking and auto-refresh",
+    "github": "https://github.com/neilkpatel/1-2-26-news-tracker",
+    "demo": "https://1226newstracker.vercel.app",
+    "tags": ["React", "Vite", "Tailwind", "NewsAPI"],
+    "icon": "📰"
+  },
+  {
     "name": "New Year's Countdown 2026",
     "date": "1/1/26",
     "description": "Real-time countdown to New Year's Day with year progress tracker and particle visualization system",
