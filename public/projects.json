@@ -4,7 +4,7 @@
     "date": "1/1/26",
     "description": "Real-time countdown to New Year's Day with year progress tracker and particle visualization system",
     "github": "https://github.com/neilkpatel/1-1-26-nye-countdown",
-    "demo": "https://1-1-26-nye-countdown.vercel.app",
+    "demo": "https://1126nyecountdown.vercel.app",
     "tags": ["React", "TypeScript", "Framer Motion", "Tailwind"]
   },
   {
@@ -12,7 +12,7 @@
     "date": "12/31/25",
     "description": "Live sports scores and game tracking application",
     "github": "https://github.com/neilkpatel/12-31-25-sports-scores",
-    "demo": "https://12-31-25-sports-scores.vercel.app",
+    "demo": "https://123125sportsscores.vercel.app",
     "tags": ["React", "Vite", "Tailwind"]
   }
 ]
