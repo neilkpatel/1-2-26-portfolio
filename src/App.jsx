@@ -72,13 +72,15 @@ function App() {
                   Passionate about creating impactful applications that make a difference.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <a
-                    href="#projects"
-                    onClick={(e) => { e.preventDefault(); setActiveSection('projects'); }}
+                  <button
+                    onClick={() => {
+                      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                      setActiveSection('projects');
+                    }}
                     className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-blue-500/30"
                   >
                     View My Work
-                  </a>
+                  </button>
                   <a
                     href="https://github.com/neilkpatel"
                     target="_blank"
@@ -95,10 +97,10 @@ function App() {
 
               {/* Right Column - Visual Element */}
               <div className="relative">
-                <div className="relative w-full h-[500px]">
+                <div className="relative w-full">
                   {/* Decorative Elements */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-3xl"></div>
-                  <div className="relative h-full bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl border border-slate-700 p-8 backdrop-blur-xl">
+                  <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl border border-slate-700 p-8 backdrop-blur-xl">
                     {/* Code Editor Mock */}
                     <div className="flex items-center gap-2 mb-6">
                       <div className="w-3 h-3 rounded-full bg-red-500"></div>
