@@ -54,7 +54,7 @@ function App() {
       {/* Content */}
       <div className="relative z-10 pt-16">
         {/* Hero Section */}
-        <section id="hero" className="min-h-screen flex items-center justify-center px-6">
+        <section id="hero" className="py-20 px-6">
           <div className="container mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Left Column - Text */}
@@ -131,7 +131,7 @@ function App() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-24 px-6">
+        <section id="projects" className="py-16 px-6">
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-4">Featured Projects</h2>
@@ -209,7 +209,7 @@ function App() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-24 px-6 bg-slate-900/50">
+        <section id="contact" className="py-16 px-6 bg-slate-900/50">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-4xl font-bold text-white mb-6">Let's Build Something Together</h2>
             <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
