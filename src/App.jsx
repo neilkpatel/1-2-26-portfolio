@@ -11,14 +11,6 @@ function App() {
       .catch(err => console.error('Error loading projects:', err))
   }, [])
 
-  const skills = [
-    { name: 'React', level: 90 },
-    { name: 'TypeScript', level: 85 },
-    { name: 'Python', level: 95 },
-    { name: 'Data Science', level: 90 },
-    { name: 'Machine Learning', level: 85 },
-    { name: 'SQL', level: 88 }
-  ]
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
@@ -128,32 +120,6 @@ function App() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Skills Section */}
-        <section className="py-24 px-6 bg-slate-900/50">
-          <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">Skills & Technologies</h2>
-              <p className="text-slate-400">Tools and technologies I work with</p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {skills.map((skill, index) => (
-                <div key={index} className="bg-slate-800/50 rounded-xl p-6 border border-slate-700 hover:border-blue-500/50 transition-all duration-300">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-white font-medium">{skill.name}</span>
-                    <span className="text-blue-400 text-sm">{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-slate-700 rounded-full h-2 overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
