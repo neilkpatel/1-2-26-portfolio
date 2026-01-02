@@ -1,5 +1,16 @@
 import { useState, useEffect } from 'react'
 
+// Build timestamp
+const BUILD_TIME = new Date().toLocaleString('en-US', {
+  timeZone: 'America/New_York',
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+  hour: 'numeric',
+  minute: '2-digit',
+  hour12: true
+});
+
 function App() {
   const [projects, setProjects] = useState([])
   const [activeSection, setActiveSection] = useState('home')
@@ -269,6 +280,9 @@ function App() {
             </div>
             <p className="text-slate-400 text-sm mb-2">
               Built with React, Vite & Tailwind CSS
+            </p>
+            <p className="text-slate-500 text-xs mb-2">
+              Last updated: {BUILD_TIME} EST
             </p>
             <p className="text-slate-500 text-xs">
               © {new Date().getFullYear()} Neil Patel. All rights reserved.
