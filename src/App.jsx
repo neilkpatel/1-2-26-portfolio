@@ -72,21 +72,18 @@ function App() {
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Left Column - Text */}
               <div className="space-y-8">
-                <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium">
-                  👋 Welcome to my portfolio
+                <div className="inline-block px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-full text-slate-300 text-sm font-medium tracking-wide uppercase">
+                  Portfolio
                 </div>
-                <h1 className="text-6xl lg:text-7xl font-bold leading-tight">
-                  <span className="text-white">Hi, I'm </span>
-                  <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    Neil Patel
-                  </span>
+                <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+                  <span className="text-white">Neil Patel</span>
                 </h1>
                 <p className="text-2xl text-slate-400 font-light">
-                  Developer & Data Scientist
+                  Marketing Scientist / Agentic Engineer
                 </p>
                 <p className="text-lg text-slate-400 leading-relaxed max-w-xl">
-                  I build elegant solutions to complex problems using modern web technologies and data science.
-                  Passionate about creating impactful applications that make a difference.
+                  I build agentic systems and data-driven marketing solutions.
+                  Passionate about leveraging AI to create impactful applications.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <button
@@ -123,31 +120,15 @@ function App() {
                 </div>
               </div>
 
-              {/* Right Column - Visual Element */}
-              <div className="relative lg:mt-8">
-                <div className="relative w-full">
-                  {/* Decorative Elements */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-3xl"></div>
-                  <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl border border-slate-700 p-8 backdrop-blur-xl">
-                    {/* Code Editor Mock */}
-                    <div className="flex items-center gap-2 mb-6">
-                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                      <div className="ml-auto text-xs text-slate-500">portfolio.jsx</div>
-                    </div>
-                    <div className="font-mono text-sm space-y-2">
-                      <div className="text-purple-400">const <span className="text-blue-400">developer</span> = {'{'}</div>
-                      <div className="pl-4 text-slate-300">name: <span className="text-green-400">'Neil Patel'</span>,</div>
-                      <div className="pl-4 text-slate-300">role: <span className="text-green-400">'Developer & Data Scientist'</span>,</div>
-                      <div className="pl-4 text-slate-300">skills: [</div>
-                      <div className="pl-8 text-green-400">'React', 'TypeScript', 'Python',</div>
-                      <div className="pl-8 text-green-400">'Data Science', 'ML'</div>
-                      <div className="pl-4 text-slate-300">],</div>
-                      <div className="pl-4 text-slate-300">passion: <span className="text-green-400">'Building amazing things'</span></div>
-                      <div className="text-purple-400">{'}'}</div>
-                    </div>
-                  </div>
+              {/* Right Column - Headshot */}
+              <div className="relative lg:mt-8 flex justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-slate-700/20 rounded-2xl blur-2xl"></div>
+                  <img
+                    src="/neil_headshot.jpeg"
+                    alt="Neil Patel"
+                    className="relative w-72 h-72 lg:w-80 lg:h-80 object-cover rounded-2xl border-2 border-slate-700 shadow-2xl"
+                  />
                 </div>
               </div>
             </div>

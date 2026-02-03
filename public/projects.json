@@ -1,5 +1,23 @@
 [
   {
+    "name": "Horizon Alliance",
+    "date": "2/3/26",
+    "description": "Alliance hub for Last War: Survival Game. Features event schedules, battle strategies, leadership roster, and alliance lore with a tactical military aesthetic.",
+    "github": "https://github.com/neilkpatel/horizon-alliance",
+    "demo": "https://horizonalliance.me",
+    "tags": ["HTML/CSS/JS", "Vercel", "Gaming", "Community"],
+    "icon": "⚔️"
+  },
+  {
+    "name": "MJ Growth Consulting",
+    "date": "1/23/26",
+    "description": "Marketing website for a Fortune 100 sales executive's growth advisory practice. Clean, minimal design with image carousel and contact form.",
+    "github": "https://github.com/neilkpatel/mjgrowth",
+    "demo": "https://mjgrowthconsulting.com",
+    "tags": ["HTML/CSS/JS", "Vercel", "Client Work"],
+    "icon": "📈"
+  },
+  {
     "name": "ATC Radar Game",
     "date": "1/3/26",
     "description": "Air Traffic Control radar simulation game. Vector arrivals to runways, sequence departures, and manage waypoints to keep the skies safe.",
