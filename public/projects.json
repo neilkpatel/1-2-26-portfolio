@@ -1,65 +1,69 @@
-[
-  {
-    "name": "Horizon Alliance",
-    "date": "2/3/26",
-    "description": "Alliance hub for Last War: Survival Game. Features event schedules, battle strategies, leadership roster, and alliance lore with a tactical military aesthetic.",
-    "github": "https://github.com/neilkpatel/horizon-alliance",
-    "demo": "https://horizonalliance.me",
-    "tags": ["HTML/CSS/JS", "Vercel", "Gaming", "Community"],
-    "icon": "⚔️"
-  },
-  {
-    "name": "MJ Growth Consulting",
-    "date": "1/23/26",
-    "description": "Marketing website for a Fortune 100 sales executive's growth advisory practice. Clean, minimal design with image carousel and contact form.",
-    "github": "https://github.com/neilkpatel/mjgrowth",
-    "demo": "https://mjgrowthconsulting.com",
-    "tags": ["HTML/CSS/JS", "Vercel", "Client Work"],
-    "icon": "📈"
-  },
-  {
-    "name": "ATC Radar Game",
-    "date": "1/3/26",
-    "description": "Air Traffic Control radar simulation game. Vector arrivals to runways, sequence departures, and manage waypoints to keep the skies safe.",
-    "github": "https://github.com/neilkpatel/1_3_26_atc_game",
-    "demo": "https://1326atcgame.vercel.app",
-    "tags": ["TypeScript", "Canvas API", "Vite", "Game Dev"],
-    "icon": "✈️"
-  },
-  {
-    "name": "News Tracker",
-    "date": "1/2/26",
-    "description": "Real-time news aggregator tracking latest articles for Adobe, Coal Energy, and GLP-1s with smart ranking and auto-refresh",
-    "github": "https://github.com/neilkpatel/1-2-26-news-tracker",
-    "demo": "https://1226newstracker.vercel.app",
-    "tags": ["React", "Vite", "Tailwind", "NewsAPI"],
-    "icon": "📰"
-  },
-  {
-    "name": "New Year's Countdown 2026",
-    "date": "1/1/26",
-    "description": "Real-time countdown to New Year's Day with year progress tracker and particle visualization system",
-    "github": "https://github.com/neilkpatel/1-1-26-nye-countdown",
-    "demo": "https://1126nyecountdown.vercel.app",
-    "tags": ["React", "TypeScript", "Framer Motion", "Tailwind"],
-    "icon": "🎆"
-  },
-  {
-    "name": "Sports Scores",
-    "date": "12/31/25",
-    "description": "Live sports scores and game tracking application",
-    "github": "https://github.com/neilkpatel/12-31-25-sports-scores",
-    "demo": "https://123125sportsscores.vercel.app",
-    "tags": ["React", "Vite", "Tailwind"],
-    "icon": "🏀"
-  },
-  {
-    "name": "Jackson Hole Snow Tracker",
-    "date": "12/28/25",
-    "description": "Real-time snow conditions dashboard with vintage split-flap display leaderboard and dynamic snowfall visualization",
-    "github": "https://github.com/neilkpatel/12_28_jackson_hole_snow_tracker",
-    "demo": "https://1228jacksonholesnowtracker.vercel.app",
-    "tags": ["Vanilla JS", "Canvas API", "Web Scraping", "CSS3"],
-    "icon": "⛷️"
-  }
-]
+{
+  "production": [
+    {
+      "name": "Horizon Alliance",
+      "date": "2/3/26",
+      "description": "Alliance hub for Last War: Survival Game. Features event schedules, battle strategies, leadership roster, and alliance lore with a tactical military aesthetic.",
+      "github": "https://github.com/neilkpatel/horizon-alliance",
+      "demo": "https://horizonalliance.me",
+      "tags": ["HTML/CSS/JS", "Vercel", "Gaming", "Community"],
+      "icon": "⚔️"
+    },
+    {
+      "name": "MJ Growth Consulting",
+      "date": "1/23/26",
+      "description": "Marketing website for a Fortune 100 sales executive's growth advisory practice. Clean, minimal design with image carousel and contact form.",
+      "github": "https://github.com/neilkpatel/mjgrowth",
+      "demo": "https://mjgrowthconsulting.com",
+      "tags": ["HTML/CSS/JS", "Vercel", "Client Work"],
+      "icon": "📈"
+    }
+  ],
+  "experimental": [
+    {
+      "name": "ATC Radar Game",
+      "date": "1/3/26",
+      "description": "Air Traffic Control radar simulation game. Vector arrivals to runways, sequence departures, and manage waypoints to keep the skies safe.",
+      "github": "https://github.com/neilkpatel/1_3_26_atc_game",
+      "demo": "https://1326atcgame.vercel.app",
+      "tags": ["TypeScript", "Canvas API", "Vite", "Game Dev"],
+      "icon": "✈️"
+    },
+    {
+      "name": "News Tracker",
+      "date": "1/2/26",
+      "description": "Real-time news aggregator tracking latest articles for Adobe, Coal Energy, and GLP-1s with smart ranking and auto-refresh",
+      "github": "https://github.com/neilkpatel/1-2-26-news-tracker",
+      "demo": "https://1226newstracker.vercel.app",
+      "tags": ["React", "Vite", "Tailwind", "NewsAPI"],
+      "icon": "📰"
+    },
+    {
+      "name": "New Year's Countdown 2026",
+      "date": "1/1/26",
+      "description": "Real-time countdown to New Year's Day with year progress tracker and particle visualization system",
+      "github": "https://github.com/neilkpatel/1-1-26-nye-countdown",
+      "demo": "https://1126nyecountdown.vercel.app",
+      "tags": ["React", "TypeScript", "Framer Motion", "Tailwind"],
+      "icon": "🎆"
+    },
+    {
+      "name": "Sports Scores",
+      "date": "12/31/25",
+      "description": "Live sports scores and game tracking application",
+      "github": "https://github.com/neilkpatel/12-31-25-sports-scores",
+      "demo": "https://123125sportsscores.vercel.app",
+      "tags": ["React", "Vite", "Tailwind"],
+      "icon": "🏀"
+    },
+    {
+      "name": "Jackson Hole Snow Tracker",
+      "date": "12/28/25",
+      "description": "Real-time snow conditions dashboard with vintage split-flap display leaderboard and dynamic snowfall visualization",
+      "github": "https://github.com/neilkpatel/12_28_jackson_hole_snow_tracker",
+      "demo": "https://1228jacksonholesnowtracker.vercel.app",
+      "tags": ["Vanilla JS", "Canvas API", "Web Scraping", "CSS3"],
+      "icon": "⛷️"
+    }
+  ]
+}
