@@ -144,7 +144,7 @@ function App() {
             {/* Production Projects */}
             <div className="mb-12">
               <p className="font-mono text-green-400 text-sm mb-2">$ ls ./production</p>
-              <h2 className="text-3xl font-bold text-white">Live Projects <span className="text-gray-500">— used by real users</span></h2>
+              <h2 className="text-3xl font-bold text-white">Live Projects <span className="text-gray-500">— used by 100+ users</span></h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
