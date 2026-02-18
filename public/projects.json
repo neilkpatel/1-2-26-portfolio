@@ -9,11 +9,11 @@
       "tags": ["React", "Supabase", "PostGIS", "Web Push", "PWA", "Leaflet"],
       "icon": "📍",
       "highlights": [
-        "Real-time WebSocket subscriptions with 5s polling fallback",
-        "PostGIS geographic queries with WKB binary parsing",
-        "Haversine midpoint calculation for group meetup coordination",
-        "VAPID-signed Web Push via Supabase Edge Functions",
-        "Row-level security with bidirectional friendship model"
+        "Live updates via WebSockets with automatic polling fallback for reliability",
+        "Geographic database queries to calculate distances and parse location data",
+        "Calculates the geographic center point between all active users",
+        "Server-side push notifications with encrypted signing keys",
+        "Database-level access control — users only see their own squad's data"
       ]
     },
     {
@@ -25,11 +25,11 @@
       "tags": ["HTML/CSS/JS", "Vercel", "Client Work"],
       "icon": "📈",
       "highlights": [
-        "Touch-enabled carousel with swipe gesture detection and passive listeners",
-        "Intersection Observer API for scroll-triggered animations",
-        "Dynamic event scheduling with date comparison logic",
-        "Formspree API integration with live character validation",
-        "Non-render-blocking font loading with noscript fallback"
+        "Swipe-enabled image carousel with touch gesture detection",
+        "Scroll-triggered fade-in animations using Intersection Observer",
+        "Dynamic schedule that auto-labels the next upcoming event",
+        "Contact form with real-time validation and API submission",
+        "Performance-optimized font loading that doesn't block page render"
       ]
     },
     {
@@ -41,11 +41,11 @@
       "tags": ["HTML/CSS/JS", "Vercel", "Gaming", "Community"],
       "icon": "⚔️",
       "highlights": [
-        "Timezone-aware countdown timer with local-to-EST conversion",
-        "Complex game data modeling for multi-phase battle strategies",
-        "CSS 3D transforms for hamburger menu with state management",
-        "Semantic details/summary accordions with custom CSS markers",
-        "Multi-keyframe pulse and glow animations on event banners"
+        "Live countdown timer that converts between user's timezone and game time",
+        "Structured data model for multi-phase battle plans with role assignments",
+        "Animated mobile menu with 3D transform transitions",
+        "Collapsible FAQ and lore sections with custom expand/collapse styling",
+        "Pulsing glow animations on event banners to draw attention"
       ]
     }
   ],
@@ -59,10 +59,10 @@
       "tags": ["TypeScript", "Canvas API", "Vite", "Game Dev"],
       "icon": "✈️",
       "highlights": [
-        "Delta-time game loop with frame-rate-independent physics",
-        "6-state aircraft state machine with asymmetric turn/climb rates",
-        "3D separation detection (horizontal + vertical minimums)",
-        "Canvas radar sweep with radial gradient rendering"
+        "Frame-rate-independent game loop — physics work the same at 30fps or 120fps",
+        "Aircraft with 6 flight states and realistic turn/climb behavior",
+        "Enforces real ATC separation rules in both horizontal and vertical dimensions",
+        "Animated radar sweep rendered with Canvas gradients"
       ]
     },
     {
@@ -74,10 +74,10 @@
       "tags": ["React", "Vite", "Tailwind", "NewsAPI"],
       "icon": "📰",
       "highlights": [
-        "Multi-factor ranking algorithm (recency + source reputation scoring)",
-        "Server-side API proxy for CORS bypass and key protection",
-        "Boolean search queries for precision topic filtering",
-        "Auto-refresh with proper interval cleanup pattern"
+        "Custom ranking algorithm that weighs article freshness and source credibility",
+        "Server-side proxy to keep API keys secure and bypass browser restrictions",
+        "Boolean search queries (AND/OR) for precise topic matching",
+        "15-minute auto-refresh with proper memory cleanup on unmount"
       ]
     },
     {
@@ -89,10 +89,10 @@
       "tags": ["React", "TypeScript", "Framer Motion", "Tailwind"],
       "icon": "🎆",
       "highlights": [
-        "DOM-based particle system with columnar stacking physics",
-        "Performance-capped rendering (4,500 particle limit, linear scaling)",
-        "Multi-layer glassmorphism with dynamic HSL glow effects",
-        "Framer Motion orchestrated sequential animations"
+        "Particle system where elements physically stack on top of each other",
+        "Scales from 0 to 4,500 particles proportional to year progress",
+        "Layered glass-blur effects with dynamic color-shifting glow",
+        "Choreographed entrance animations with staggered timing"
       ]
     },
     {
@@ -104,10 +104,10 @@
       "tags": ["React", "Vite", "Tailwind"],
       "icon": "🏀",
       "highlights": [
-        "ESPN API aggregation across 17 leagues with Promise.all()",
-        "5-factor importance scoring (120-point composite ranking)",
-        "League diversity constraint for balanced feed curation",
-        "Temporal scoping with yesterday fallback strategy"
+        "Fetches scores from 17 leagues simultaneously using parallel API calls",
+        "Ranks games by importance: playoff status, broadcast, team quality, and context",
+        "Caps games per league so no single sport dominates the feed",
+        "Shows today's games, or falls back to yesterday if nothing's on"
       ]
     },
     {
@@ -119,10 +119,10 @@
       "tags": ["Vanilla JS", "Canvas API", "Web Scraping", "CSS3"],
       "icon": "⛷️",
       "highlights": [
-        "Canvas particle system for data-responsive snowfall visualization",
-        "Split-flap display with CSS 3D rotateX transforms",
-        "Multi-site web scraping pipeline with fallback error handling",
-        "Hand-rendered Canvas bar charts with dynamic axis scaling"
+        "Snowfall animation intensity scales with actual reported snow data",
+        "Vintage airport-style split-flap display with 3D flip animations",
+        "Scrapes 12 resort websites for live snow data with automatic error recovery",
+        "Custom-drawn charts (no charting library) with dynamic axis scaling"
       ]
     }
   ]
