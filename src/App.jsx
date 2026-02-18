@@ -141,6 +141,21 @@ function App() {
         {/* Projects Section */}
         <section id="projects" className="pt-8 pb-16 px-6">
           <div className="container mx-auto max-w-7xl">
+            {/* Stats Bar */}
+            <div className="mb-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { value: '8', label: 'Projects Built' },
+                { value: '3', label: 'In Production' },
+                { value: '44+', label: 'Tests Written' },
+                { value: '6', label: 'APIs Integrated' },
+              ].map((stat, i) => (
+                <div key={i} className="bg-[#111] border border-gray-800 rounded-lg p-4 text-center">
+                  <div className="text-2xl font-bold text-green-400 font-mono">{stat.value}</div>
+                  <div className="text-xs text-gray-500 font-mono mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
             {/* Production Projects */}
             <div className="mb-12">
               <p className="font-mono text-green-400 text-sm mb-2">$ ls ./production</p>
