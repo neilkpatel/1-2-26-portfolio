@@ -1,13 +1,20 @@
 {
   "production": [
     {
-      "name": "Horizon Alliance",
-      "date": "2/3/26",
-      "description": "Alliance hub for Last War: Survival Game. Features event schedules, battle strategies, leadership roster, and alliance lore with a tactical military aesthetic.",
-      "github": "https://github.com/neilkpatel/horizon-alliance",
-      "demo": "https://horizonalliance.me",
-      "tags": ["HTML/CSS/JS", "Vercel", "Gaming", "Community"],
-      "icon": "⚔️"
+      "name": "Sup",
+      "date": "2/16/26",
+      "description": "\"Who's free to hang\" PWA. One-tap broadcasting to your squad with push notifications, real-time map with midpoint calculation, and bar suggestions near the group.",
+      "github": "https://github.com/neilkpatel/2_16_26_sup-app",
+      "demo": "https://sup-app-jet.vercel.app",
+      "tags": ["React", "Supabase", "PostGIS", "Web Push", "PWA", "Leaflet"],
+      "icon": "📍",
+      "highlights": [
+        "Real-time WebSocket subscriptions with 5s polling fallback",
+        "PostGIS geographic queries with WKB binary parsing",
+        "Haversine midpoint calculation for group meetup coordination",
+        "VAPID-signed Web Push via Supabase Edge Functions",
+        "Row-level security with bidirectional friendship model"
+      ]
     },
     {
       "name": "MJ Growth Consulting",
@@ -16,7 +23,30 @@
       "github": "https://github.com/neilkpatel/mjgrowth",
       "demo": "https://mjgrowthconsulting.com",
       "tags": ["HTML/CSS/JS", "Vercel", "Client Work"],
-      "icon": "📈"
+      "icon": "📈",
+      "highlights": [
+        "Touch-enabled carousel with swipe gesture detection and passive listeners",
+        "Intersection Observer API for scroll-triggered animations",
+        "Dynamic event scheduling with date comparison logic",
+        "Formspree API integration with live character validation",
+        "Non-render-blocking font loading with noscript fallback"
+      ]
+    },
+    {
+      "name": "Horizon Alliance",
+      "date": "2/3/26",
+      "description": "Alliance hub for Last War: Survival Game. Features event schedules, battle strategies, leadership roster, and alliance lore with a tactical military aesthetic.",
+      "github": "https://github.com/neilkpatel/horizon-alliance",
+      "demo": "https://horizonalliance.me",
+      "tags": ["HTML/CSS/JS", "Vercel", "Gaming", "Community"],
+      "icon": "⚔️",
+      "highlights": [
+        "Timezone-aware countdown timer with local-to-EST conversion",
+        "Complex game data modeling for multi-phase battle strategies",
+        "CSS 3D transforms for hamburger menu with state management",
+        "Semantic details/summary accordions with custom CSS markers",
+        "Multi-keyframe pulse and glow animations on event banners"
+      ]
     }
   ],
   "experimental": [
@@ -27,43 +57,73 @@
       "github": "https://github.com/neilkpatel/1_3_26_atc_game",
       "demo": "https://1326atcgame.vercel.app",
       "tags": ["TypeScript", "Canvas API", "Vite", "Game Dev"],
-      "icon": "✈️"
+      "icon": "✈️",
+      "highlights": [
+        "Delta-time game loop with frame-rate-independent physics",
+        "6-state aircraft state machine with asymmetric turn/climb rates",
+        "3D separation detection (horizontal + vertical minimums)",
+        "Canvas radar sweep with radial gradient rendering"
+      ]
     },
     {
       "name": "News Tracker",
       "date": "1/2/26",
-      "description": "Real-time news aggregator tracking latest articles for Adobe, Coal Energy, and GLP-1s with smart ranking and auto-refresh",
+      "description": "Real-time news aggregator tracking latest articles for Adobe, Coal Energy, and GLP-1s with smart ranking and auto-refresh.",
       "github": "https://github.com/neilkpatel/1-2-26-news-tracker",
       "demo": "https://1226newstracker.vercel.app",
       "tags": ["React", "Vite", "Tailwind", "NewsAPI"],
-      "icon": "📰"
+      "icon": "📰",
+      "highlights": [
+        "Multi-factor ranking algorithm (recency + source reputation scoring)",
+        "Server-side API proxy for CORS bypass and key protection",
+        "Boolean search queries for precision topic filtering",
+        "Auto-refresh with proper interval cleanup pattern"
+      ]
     },
     {
       "name": "New Year's Countdown 2026",
       "date": "1/1/26",
-      "description": "Real-time countdown to New Year's Day with year progress tracker and particle visualization system",
+      "description": "Real-time countdown to New Year's Day with year progress tracker and particle visualization system.",
       "github": "https://github.com/neilkpatel/1-1-26-nye-countdown",
       "demo": "https://1126nyecountdown.vercel.app",
       "tags": ["React", "TypeScript", "Framer Motion", "Tailwind"],
-      "icon": "🎆"
+      "icon": "🎆",
+      "highlights": [
+        "DOM-based particle system with columnar stacking physics",
+        "Performance-capped rendering (4,500 particle limit, linear scaling)",
+        "Multi-layer glassmorphism with dynamic HSL glow effects",
+        "Framer Motion orchestrated sequential animations"
+      ]
     },
     {
       "name": "Sports Scores",
       "date": "12/31/25",
-      "description": "Live sports scores and game tracking application",
+      "description": "Live sports scores and game tracking across 17 leagues with intelligent ranking.",
       "github": "https://github.com/neilkpatel/12-31-25-sports-scores",
       "demo": "https://123125sportsscores.vercel.app",
       "tags": ["React", "Vite", "Tailwind"],
-      "icon": "🏀"
+      "icon": "🏀",
+      "highlights": [
+        "ESPN API aggregation across 17 leagues with Promise.all()",
+        "5-factor importance scoring (120-point composite ranking)",
+        "League diversity constraint for balanced feed curation",
+        "Temporal scoping with yesterday fallback strategy"
+      ]
     },
     {
       "name": "Jackson Hole Snow Tracker",
       "date": "12/28/25",
-      "description": "Real-time snow conditions dashboard with vintage split-flap display leaderboard and dynamic snowfall visualization",
+      "description": "Real-time snow conditions dashboard with vintage split-flap display leaderboard and dynamic snowfall visualization.",
       "github": "https://github.com/neilkpatel/12_28_jackson_hole_snow_tracker",
       "demo": "https://1228jacksonholesnowtracker.vercel.app",
       "tags": ["Vanilla JS", "Canvas API", "Web Scraping", "CSS3"],
-      "icon": "⛷️"
+      "icon": "⛷️",
+      "highlights": [
+        "Canvas particle system for data-responsive snowfall visualization",
+        "Split-flap display with CSS 3D rotateX transforms",
+        "Multi-site web scraping pipeline with fallback error handling",
+        "Hand-rendered Canvas bar charts with dynamic axis scaling"
+      ]
     }
   ]
 }

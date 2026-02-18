@@ -66,9 +66,11 @@ vercel --prod
 ---
 
 ## Links
-- **Email:** hello@neilkpatel.com
 - **GitHub:** https://github.com/neilkpatel
 - **LinkedIn:** https://www.linkedin.com/in/neilkiranpatel/
+
+## Contacts
+- **Aaron Grobin:** aarongrobin@gmail.com
 
 ---
 

@@ -145,7 +145,7 @@ function App() {
             <div className="mb-12">
               <p className="font-mono text-green-400 text-sm mb-2">$ ls ./production</p>
               <h2 className="text-3xl font-bold text-white mb-2">Live Projects</h2>
-              <p className="text-gray-500">Production sites actively used by real users</p>
+              <p className="text-gray-500">Deployed to production with active users</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
@@ -176,6 +176,19 @@ function App() {
                         <span key={i} className="text-green-400">"{tag}"</span>
                       ))}
                     </div>
+                    {project.highlights && project.highlights.length > 0 && (
+                      <>
+                        <div className="text-gray-500 mb-1">$ cat HIGHLIGHTS.md</div>
+                        <div className="mb-3 space-y-1">
+                          {project.highlights.map((h, i) => (
+                            <div key={i} className="text-cyan-400/80 text-xs flex items-start gap-2">
+                              <span className="text-green-500 mt-px shrink-0">▸</span>
+                              <span>{h}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </>
+                    )}
                     <div className="text-gray-500">$ open {project.demo.replace('https://', '')}</div>
                   </div>
 
@@ -232,6 +245,16 @@ function App() {
                     <p className="text-gray-500 text-sm leading-relaxed mb-3 line-clamp-2">
                       {project.description}
                     </p>
+                    {project.highlights && project.highlights.length > 0 && (
+                      <div className="mb-3 space-y-0.5">
+                        {project.highlights.slice(0, 3).map((h, i) => (
+                          <div key={i} className="text-cyan-400/70 text-xs flex items-start gap-1.5 font-mono">
+                            <span className="text-green-500/70 mt-px shrink-0">▸</span>
+                            <span className="line-clamp-1">{h}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                     <div className="flex flex-wrap gap-1.5">
                       {project.tags.slice(0, 3).map((tag, i) => (
                         <span key={i} className="px-2 py-0.5 bg-gray-800 text-gray-400 text-xs font-mono rounded">
