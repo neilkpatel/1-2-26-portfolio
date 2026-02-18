@@ -144,16 +144,14 @@ function App() {
             {/* Production Projects */}
             <div className="mb-12">
               <p className="font-mono text-green-400 text-sm mb-2">$ ls ./production</p>
-              <h2 className="text-3xl font-bold text-white mb-2">Live Projects</h2>
-              <p className="text-gray-500">Deployed to production with active users</p>
+              <h2 className="text-3xl font-bold text-white">Live Projects <span className="text-gray-500">— used by real users</span></h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
               {productionProjects.map((project, index) => (
                 <div
                   key={index}
-                  onClick={() => window.open(project.demo, '_blank')}
-                  className="group relative bg-[#111] rounded-lg border border-gray-800 overflow-hidden hover:border-green-500/50 transition-all duration-300 cursor-pointer"
+                  className="group relative bg-[#111] rounded-lg border border-gray-800 overflow-hidden hover:border-green-500/50 transition-all duration-300"
                 >
                   {/* Terminal Header */}
                   <div className="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2 flex items-center gap-2">
@@ -162,46 +160,52 @@ function App() {
                       <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                       <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                     </div>
-                    <span className="ml-2 text-xs font-mono text-gray-500">{project.name.toLowerCase().replace(/\s+/g, '-')}</span>
+                    <span className="ml-2 text-xs font-mono text-gray-500">{project.demo.replace('https://', '')}</span>
                     <span className="ml-auto px-2 py-0.5 bg-green-500/20 text-green-400 text-xs font-mono rounded">LIVE</span>
                   </div>
 
-                  {/* Terminal Content */}
-                  <div className="p-4 font-mono text-sm">
-                    <div className="text-gray-500 mb-1">$ cat README.md</div>
-                    <div className="text-gray-300 mb-3">{project.description}</div>
-                    <div className="text-gray-500 mb-1">$ cat package.json | grep "tech"</div>
-                    <div className="flex flex-wrap gap-2 mb-3">
+                  {/* Card Content */}
+                  <div className="p-5">
+                    {/* Project Name */}
+                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-green-400 transition-colors">
+                      {project.name}
+                    </h3>
+                    <p className="text-gray-400 text-sm mb-4 leading-relaxed">{project.description}</p>
+
+                    {/* Tech Tags */}
+                    <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map((tag, i) => (
-                        <span key={i} className="text-green-400">"{tag}"</span>
+                        <span key={i} className="px-2 py-0.5 bg-green-500/10 text-green-400 text-xs font-mono rounded border border-green-500/20">
+                          {tag}
+                        </span>
                       ))}
                     </div>
+
+                    {/* Highlights */}
                     {project.highlights && project.highlights.length > 0 && (
-                      <>
-                        <div className="text-gray-500 mb-1">$ cat HIGHLIGHTS.md</div>
-                        <div className="mb-3 space-y-1">
-                          {project.highlights.map((h, i) => (
-                            <div key={i} className="text-cyan-400/80 text-xs flex items-start gap-2">
-                              <span className="text-green-500 mt-px shrink-0">▸</span>
-                              <span>{h}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </>
+                      <div className="border-t border-gray-800 pt-3 mb-1 space-y-1.5">
+                        {project.highlights.map((h, i) => (
+                          <div key={i} className="text-cyan-400/80 text-xs flex items-start gap-2 font-mono">
+                            <span className="text-green-500 mt-px shrink-0">▸</span>
+                            <span>{h}</span>
+                          </div>
+                        ))}
+                      </div>
                     )}
-                    <div className="text-gray-500">$ open {project.demo.replace('https://', '')}</div>
                   </div>
 
                   {/* Links */}
-                  <div className="px-4 pb-4 flex gap-3">
-                    <div className="flex-1 text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium group-hover:bg-green-400 transition-colors">
+                  <div className="px-5 pb-4 flex gap-3">
+                    <button
+                      onClick={() => window.open(project.demo, '_blank')}
+                      className="flex-1 text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
+                    >
                       visit_site()
-                    </div>
+                    </button>
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
                       className="px-4 py-2 border border-gray-700 text-gray-400 rounded font-mono text-sm hover:border-green-500 hover:text-green-400 transition-colors flex items-center gap-2"
                     >
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
