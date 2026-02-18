@@ -70,7 +70,7 @@ function App() {
       <div className="relative z-10 pt-16">
         {/* Hero Section */}
         <section id="hero" className="py-12 pb-8 px-6">
-          <div className="container mx-auto">
+          <div className="container mx-auto max-w-7xl">
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Left Column - Text */}
               <div className="space-y-6">
