@@ -142,10 +142,12 @@ function App() {
         <section id="projects" className="pt-8 pb-16 px-6">
           <div className="container mx-auto max-w-7xl">
             {/* Stats Bar */}
-            <div className="mb-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="mb-12 grid grid-cols-3 md:grid-cols-6 gap-4">
               {[
                 { value: '8', label: 'Projects Built' },
                 { value: '3', label: 'In Production' },
+                { value: '100+', label: 'Active Users' },
+                { value: '3', label: 'Databases Designed' },
                 { value: '44+', label: 'Tests Written' },
                 { value: '6', label: 'APIs Integrated' },
               ].map((stat, i) => (
