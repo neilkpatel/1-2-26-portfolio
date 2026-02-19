@@ -36,8 +36,9 @@ Professional portfolio website showcasing Neil's projects and skills.
 ## Current Projects (in projects.json)
 
 ### Production (Live Sites)
-1. MJ Growth Consulting (1/23/26) - Marketing website for Fortune 100 sales exec
-2. Horizon Alliance (2/3/26) - Gaming alliance hub for Last War
+1. Sup (2/16/26) - "Who's free to hang" PWA with push notifications, real-time map, bar suggestions
+2. MJ Growth Consulting (1/23/26) - Marketing website for Fortune 100 sales exec
+3. Horizon Alliance (2/3/26) - Gaming alliance hub for Last War
 
 ### Experimental
 1. ATC Radar Game (1/3/26) - Air traffic control simulation
