@@ -15,6 +15,7 @@ const BUILD_TIME = new Date().toLocaleString('en-US', {
 function App() {
   const [productionProjects, setProductionProjects] = useState([])
   const [experimentalProjects, setExperimentalProjects] = useState([])
+  const [roadmap, setRoadmap] = useState([])
   const [activeSection, setActiveSection] = useState('home')
 
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
       .then(data => {
         setProductionProjects(data.production || [])
         setExperimentalProjects(data.experimental || [])
+        setRoadmap(data.roadmap || [])
       })
       .catch(err => console.error('Error loading projects:', err))
   }, [])
@@ -48,7 +50,7 @@ function App() {
               ~/neil
             </div>
             <div className="hidden md:flex gap-8">
-              {['Home', 'Projects', 'Contact'].map((item) => (
+              {['Home', 'Projects', 'Roadmap', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => {
@@ -374,6 +376,50 @@ function App() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Roadmap Section */}
+        <section id="roadmap" className="py-16 px-6 border-t border-gray-800">
+          <div className="container mx-auto max-w-7xl">
+            <div className="mb-12">
+              <p className="font-mono text-green-400 text-sm mb-2">$ cat ./roadmap.md</p>
+              <h2 className="text-3xl font-bold text-white">Roadmap <span className="text-gray-500">— getting closer to the model</span></h2>
+            </div>
+
+            <div className="bg-[#111] rounded-lg border border-gray-800 overflow-hidden">
+              <div className="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2 flex items-center gap-2">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                </div>
+                <span className="ml-2 text-xs font-mono text-gray-500">~/neil/roadmap</span>
+                <span className="ml-auto px-2 py-0.5 bg-purple-500/20 text-purple-400 text-xs font-mono rounded">{roadmap.filter(r => !r.done).length} queued</span>
+              </div>
+              <div className="p-5 space-y-4">
+                {roadmap.map((item, index) => (
+                  <div key={index} className={`flex items-start gap-3 ${item.done ? 'opacity-50' : ''}`}>
+                    <span className={`mt-0.5 text-lg shrink-0 ${item.done ? 'text-green-500' : 'text-gray-600'}`}>
+                      {item.done ? '[x]' : '[ ]'}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <h3 className={`font-mono font-bold text-sm ${item.done ? 'line-through text-gray-500' : 'text-white'}`}>
+                        {item.name}
+                      </h3>
+                      <p className="text-gray-500 text-xs mt-0.5">{item.description}</p>
+                      <div className="flex flex-wrap gap-1.5 mt-2">
+                        {item.tags.map((tag, i) => (
+                          <span key={i} className="px-1.5 py-0.5 bg-purple-500/10 text-purple-400 text-xs font-mono rounded border border-purple-500/20">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

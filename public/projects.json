@@ -204,5 +204,38 @@
         "Custom-drawn charts (no charting library) with dynamic axis scaling"
       ]
     }
+  ],
+  "roadmap": [
+    {
+      "name": "Train a Shakespeare Transformer from Scratch",
+      "description": "10.8M parameter transformer in raw PyTorch, trained on H100 via Modal",
+      "tags": ["PyTorch", "Transformers", "Modal"],
+      "done": true
+    },
+    {
+      "name": "Fine-Tune an Open-Source LLM",
+      "description": "LoRA/QLoRA fine-tuning on Llama or Mistral with custom data",
+      "tags": ["LoRA", "Hugging Face", "PEFT"]
+    },
+    {
+      "name": "Build Backpropagation from Scratch",
+      "description": "Pure NumPy neural net — no autograd, every gradient written by hand",
+      "tags": ["NumPy", "Calculus", "Neural Nets"]
+    },
+    {
+      "name": "Mechanistic Interpretability",
+      "description": "Reverse-engineer what specific neurons and circuits learn inside a trained transformer",
+      "tags": ["Interpretability", "PyTorch", "Probing"]
+    },
+    {
+      "name": "RLHF / DPO Alignment",
+      "description": "Train a small model to follow human preferences — the step that turns a predictor into an assistant",
+      "tags": ["RLHF", "DPO", "Reward Modeling"]
+    },
+    {
+      "name": "Build a Diffusion Model from Scratch",
+      "description": "Train a denoiser on images, visualize the full denoising process step by step",
+      "tags": ["Diffusion", "PyTorch", "Computer Vision"]
+    }
   ]
 }
