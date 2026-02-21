@@ -33,6 +33,22 @@
       ]
     },
     {
+      "name": "Kitchen Sink",
+      "date": "2/20/26",
+      "description": "Snap a photo of your fridge and get instant recipe ideas. AI identifies your ingredients, rates your fridge out of 10, and roasts your food choices — then suggests what to cook.",
+      "github": "https://github.com/neilkpatel/2_20_26_kitchen-sink",
+      "demo": "https://22026kitchen-sink.vercel.app",
+      "tags": ["React", "Vite", "Claude API", "Vision AI", "Vercel"],
+      "icon": "🍳",
+      "highlights": [
+        "Claude vision API identifies ingredients from a single fridge photo",
+        "AI rates your fridge 1-10 on variety, nutrition, and cooking potential",
+        "Roast Mode for a savage (but playful) critique of your fridge contents",
+        "Editable ingredient list with on-the-fly recipe regeneration",
+        "Server-side API proxy keeps keys secure with client-side image compression"
+      ]
+    },
+    {
       "name": "Horizon Alliance",
       "date": "2/3/26",
       "description": "Alliance hub for Last War: Survival Game. Features event schedules, battle strategies, leadership roster, and alliance lore with a tactical military aesthetic.",
