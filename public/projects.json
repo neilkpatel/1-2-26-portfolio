@@ -9,6 +9,9 @@
       "demo": "https://22026kitchen-sink.vercel.app",
       "tags": ["React", "Vite", "Claude API", "Vision AI", "Vercel"],
       "icon": "🍳",
+      "images": [
+        {"src": "/screenshots/kitchen_sink.jpg", "caption": "Scan your fridge with AI"}
+      ],
       "highlights": [
         "Claude vision API identifies ingredients from a single fridge photo",
         "AI rates your fridge 1-10 on variety, nutrition, and cooking potential",
@@ -25,6 +28,9 @@
       "demo": "https://sup-app-jet.vercel.app",
       "tags": ["React", "Supabase", "PostGIS", "Web Push", "PWA", "Leaflet"],
       "icon": "📍",
+      "images": [
+        {"src": "/screenshots/sup.jpg", "caption": "Real-time map with push notifications"}
+      ],
       "highlights": [
         "Live updates via WebSockets with automatic polling fallback for reliability",
         "Geographic database queries to calculate distances and parse location data",
@@ -41,6 +47,9 @@
       "demo": "https://mjgrowthconsulting.com",
       "tags": ["HTML/CSS/JS", "Vercel", "Client Work"],
       "icon": "📈",
+      "images": [
+        {"src": "/screenshots/mjgrowth.jpg", "caption": "Growth advisory landing page"}
+      ],
       "highlights": [
         "Swipe-enabled image carousel with touch gesture detection",
         "Scroll-triggered fade-in animations using Intersection Observer",
@@ -57,6 +66,9 @@
       "demo": "https://horizonalliance.me",
       "tags": ["HTML/CSS/JS", "Vercel", "Gaming", "Community"],
       "icon": "⚔️",
+      "images": [
+        {"src": "/screenshots/horizon.jpg", "caption": "Alliance hub with leadership roster"}
+      ],
       "highlights": [
         "Live countdown timer that converts between user's timezone and game time",
         "Structured data model for multi-phase battle plans with role assignments",
@@ -68,6 +80,23 @@
   ],
   "experimental": [
     {
+      "name": "AlphaGenome: Eye Color Variant Analysis",
+      "date": "2/21/26",
+      "description": "Investigated how a single DNA mutation determines blue vs brown eye color using DeepMind's AlphaGenome API. Designed controlled experiments proving the model reads DNA sequence rather than memorizing results.",
+      "tags": ["Python", "AlphaGenome API", "Genomics", "Deep Learning"],
+      "icon": "🧬",
+      "images": [
+        {"src": "/alphagenome/4_memorization_test.jpg", "caption": "4 experiments proving the model reads DNA sequence"},
+        {"src": "/alphagenome/1_rnaseq_melanocyte.jpg", "caption": "RNA-seq: blue vs brown eye alleles"}
+      ],
+      "highlights": [
+        "Variant scoring identified OCA2 as the top affected gene — matching decades of lab research",
+        "Cross-tissue analysis confirmed the effect is strongest in melanocytes (pigment cells)",
+        "Scrambled DNA test proved the model reads sequence, not coordinates (correlation: -0.03)",
+        "Histone ChIP-seq revealed a 16x enhancer activity difference between alleles"
+      ]
+    },
+    {
       "name": "ATC Radar Game",
       "date": "1/3/26",
       "description": "Air Traffic Control radar simulation game. Vector arrivals to runways, sequence departures, and manage waypoints to keep the skies safe.",
@@ -75,6 +104,9 @@
       "demo": "https://1326atcgame.vercel.app",
       "tags": ["TypeScript", "Canvas API", "Vite", "Game Dev"],
       "icon": "✈️",
+      "images": [
+        {"src": "/screenshots/atc_game.jpg", "caption": "Radar scope with arrivals, departures, and waypoints"}
+      ],
       "highlights": [
         "Frame-rate-independent game loop — physics work the same at 30fps or 120fps",
         "Aircraft with 6 flight states and realistic turn/climb behavior",
@@ -90,6 +122,9 @@
       "demo": "https://1226newstracker.vercel.app",
       "tags": ["React", "Vite", "Tailwind", "NewsAPI"],
       "icon": "📰",
+      "images": [
+        {"src": "/screenshots/news_tracker.jpg", "caption": "Real-time article feed with smart ranking"}
+      ],
       "highlights": [
         "Custom ranking algorithm that weighs article freshness and source credibility",
         "Server-side proxy to keep API keys secure and bypass browser restrictions",
@@ -105,6 +140,9 @@
       "demo": "https://1126nyecountdown.vercel.app",
       "tags": ["React", "TypeScript", "Framer Motion", "Tailwind"],
       "icon": "🎆",
+      "images": [
+        {"src": "/screenshots/nye_countdown.jpg", "caption": "Particle countdown with glass-blur effects"}
+      ],
       "highlights": [
         "Particle system where elements physically stack on top of each other",
         "Scales from 0 to 4,500 particles proportional to year progress",
@@ -120,6 +158,9 @@
       "demo": "https://123125sportsscores.vercel.app",
       "tags": ["React", "Vite", "Tailwind"],
       "icon": "🏀",
+      "images": [
+        {"src": "/screenshots/sports_scores.jpg", "caption": "Multi-league scores with intelligent ranking"}
+      ],
       "highlights": [
         "Fetches scores from 17 leagues simultaneously using parallel API calls",
         "Ranks games by importance: playoff status, broadcast, team quality, and context",
@@ -135,6 +176,9 @@
       "demo": "https://1228jacksonholesnowtracker.vercel.app",
       "tags": ["Vanilla JS", "Canvas API", "Web Scraping", "CSS3"],
       "icon": "⛷️",
+      "images": [
+        {"src": "/screenshots/snow_tracker.jpg", "caption": "Live snow conditions with split-flap display"}
+      ],
       "highlights": [
         "Snowfall animation intensity scales with actual reported snow data",
         "Vintage airport-style split-flap display with 3D flip animations",

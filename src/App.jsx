@@ -205,6 +205,15 @@ function App() {
                     </h3>
                     <p className="text-gray-400 text-sm mb-4 leading-relaxed">{project.description}</p>
 
+                    {/* Screenshot */}
+                    {project.images && project.images.length > 0 && (
+                      <div className="mb-4">
+                        <a href={project.images[0].src} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded border border-gray-700 hover:border-green-500/50 transition-colors">
+                          <img src={project.images[0].src} alt={project.images[0].caption} title={project.images[0].caption} className="w-full aspect-video object-contain bg-black/50 cursor-pointer" />
+                        </a>
+                      </div>
+                    )}
+
                     {/* Tech Tags */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map((tag, i) => (
@@ -270,7 +279,7 @@ function App() {
                       <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                       <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                     </div>
-                    <span className="ml-2 text-xs font-mono text-gray-500">{project.demo.replace('https://', '')}</span>
+                    <span className="ml-2 text-xs font-mono text-gray-500">{project.demo ? project.demo.replace('https://', '') : 'local://research'}</span>
                     <span className="ml-auto px-2 py-0.5 bg-gray-700/50 text-gray-400 text-xs font-mono rounded">{project.date}</span>
                   </div>
 
@@ -280,6 +289,26 @@ function App() {
                       {project.name}
                     </h3>
                     <p className="text-gray-400 text-sm mb-4 leading-relaxed">{project.description}</p>
+
+                    {/* Image Gallery */}
+                    {project.images && project.images.length > 0 && (
+                      <div className="mb-4">
+                        {project.images.length === 1 ? (
+                          <a href={project.images[0].src} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded border border-gray-700 hover:border-green-500/50 transition-colors">
+                            <img src={project.images[0].src} alt={project.images[0].caption} title={project.images[0].caption} className="w-full aspect-video object-contain bg-black/50 cursor-pointer" />
+                          </a>
+                        ) : (
+                          <div className="grid grid-cols-2 gap-1.5">
+                            {project.images.map((img, i) => (
+                              <a key={i} href={img.src} target="_blank" rel="noopener noreferrer" className="overflow-hidden rounded border border-gray-700 hover:border-green-500/50 transition-colors">
+                                <img src={img.src} alt={img.caption} title={img.caption} className="w-full aspect-video object-contain bg-black/50 cursor-pointer" />
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                        <p className="text-gray-500 text-xs font-mono mt-1.5">click to expand</p>
+                      </div>
+                    )}
 
                     {/* Tech Tags */}
                     <div className="flex flex-wrap gap-2 mb-4">
@@ -305,23 +334,35 @@ function App() {
 
                   {/* Links */}
                   <div className="px-5 pb-4 flex gap-3">
-                    <button
-                      onClick={() => window.open(project.demo, '_blank')}
-                      className="flex-1 text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
-                    >
-                      try_it()
-                    </button>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 border border-gray-700 text-gray-400 rounded font-mono text-sm hover:border-green-500 hover:text-green-400 transition-colors flex items-center gap-2"
-                    >
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                      </svg>
-                      repo
-                    </a>
+                    {project.demo && (
+                      <button
+                        onClick={() => window.open(project.demo, '_blank')}
+                        className="flex-1 text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
+                      >
+                        try_it()
+                      </button>
+                    )}
+                    {project.images && !project.demo && (
+                      <button
+                        onClick={() => window.open(project.images[0].src, '_blank')}
+                        className="flex-1 text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
+                      >
+                        view_results()
+                      </button>
+                    )}
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 border border-gray-700 text-gray-400 rounded font-mono text-sm hover:border-green-500 hover:text-green-400 transition-colors flex items-center gap-2"
+                      >
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                        </svg>
+                        repo
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
