@@ -236,6 +236,16 @@
       "name": "Build a Diffusion Model from Scratch",
       "description": "Train a denoiser on images, visualize the full denoising process step by step",
       "tags": ["Diffusion", "PyTorch", "Computer Vision"]
+    },
+    {
+      "name": "NBA Player Value Analysis",
+      "description": "Feature engineering on player stats and salary data to find the most over/underpaid players. EDA, regression, clustering, and visualization storytelling.",
+      "tags": ["pandas", "scikit-learn", "Regression", "Clustering"]
+    },
+    {
+      "name": "Flight Delay Prediction (BTS On-Time Data)",
+      "description": "Millions of domestic flights — predict delays using carrier, route, time, and weather features. Full DS pipeline: cleaning, EDA, feature engineering, model comparison.",
+      "tags": ["pandas", "XGBoost", "Time Series", "Geospatial"]
     }
   ]
 }
