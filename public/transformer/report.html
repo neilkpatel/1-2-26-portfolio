@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shakespeare Transformer — Training Report</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0f; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font-size: 2rem; color: #fff; margin-bottom: 8px; }
+  .subtitle { color: #888; font-size: 0.95rem; margin-bottom: 48px; }
+  .section { margin-bottom: 56px; }
+  .section h2 { font-size: 1.25rem; color: #4CAF50; margin-bottom: 6px; font-family: 'SF Mono', 'Fira Code', monospace; }
+  .section .description { color: #aaa; font-size: 0.9rem; margin-bottom: 16px; max-width: 700px; }
+  .section img { width: 100%; border-radius: 8px; border: 1px solid #222; }
+  .insight { background: #111118; border-left: 3px solid #4CAF50; padding: 12px 16px; border-radius: 0 6px 6px 0; margin-top: 12px; font-size: 0.88rem; color: #ccc; }
+  .insight strong { color: #4CAF50; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 48px; }
+  .stat { background: #111118; border: 1px solid #222; border-radius: 8px; padding: 16px; text-align: center; }
+  .stat .value { font-size: 1.5rem; font-weight: 700; color: #4CAF50; font-family: 'SF Mono', monospace; }
+  .stat .label { font-size: 0.75rem; color: #888; margin-top: 4px; }
+  .divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
+  .tag { display: inline-block; background: #1a2e1a; color: #4CAF50; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-family: monospace; margin-right: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Shakespeare Transformer</h1>
+  <p class="subtitle">10.8M parameter transformer trained from scratch on 1.1MB of Shakespeare &middot; NVIDIA H100 &middot; ~4 minutes</p>
+
+  <div class="stats">
+    <div class="stat"><div class="value">10.8M</div><div class="label">Parameters</div></div>
+    <div class="stat"><div class="value">1.07</div><div class="label">Final Train Loss</div></div>
+    <div class="stat"><div class="value">1.49</div><div class="label">Final Val Loss</div></div>
+    <div class="stat"><div class="value">4.4</div><div class="label">Perplexity</div></div>
+  </div>
+
+  <div class="section">
+    <h2>1. Loss Curve</h2>
+    <p class="description">The most important chart in ML. Shows the model learning over time — both on training data and held-out validation data.</p>
+    <img src="1_loss_curve.jpg" alt="Loss curve">
+    <div class="insight">
+      <strong>Key insight:</strong> Loss drops from 4.3 (random guessing over 65 characters) to 1.07 train / 1.49 val. The widening gap (pink area) shows overfitting — the model is memorizing training data faster than it's generalizing. Expected for 10.8M params on only 1MB of text.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2>2. Text Evolution</h2>
+    <p class="description">Generated text at each training checkpoint. Watch the model go from random noise to coherent Shakespeare.</p>
+    <img src="2_text_evolution.jpg" alt="Text evolution">
+    <div class="insight">
+      <strong>Key insight:</strong> Step 0 = gibberish. By step 500, words and spaces emerge. By step 2000+, full dialogue with character names, colons, punctuation, and Shakespearean vocabulary. The model learned English structure, then Shakespeare's style — entirely from character-level prediction.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2>3. Attention Heads (Layer 0)</h2>
+    <p class="description">What each of the 6 attention heads "looks at" when processing a line of Shakespeare. Each head learns a different pattern.</p>
+    <img src="3_attention_heads_layer0.jpg" alt="Attention heads layer 0">
+    <div class="insight">
+      <strong>Key insight:</strong> The bright diagonal in Heads 0 and 4 means "look at the previous character" — the most basic pattern. Other heads show diffuse or selective attention, meaning they learned to look at broader context or specific structural elements like punctuation and speaker names.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2>4. Attention Across Layers</h2>
+    <p class="description">Head 0 at each of the 6 layers. Shows how attention evolves from local to abstract patterns as you go deeper.</p>
+    <img src="4_attention_across_layers.jpg" alt="Attention across layers">
+    <div class="insight">
+      <strong>Key insight:</strong> Early layers (0-1) have tight diagonals = local, character-level attention. Later layers (4-5) have sparse, scattered hot spots = long-range, abstract pattern matching. The model builds a hierarchy: characters &rarr; words &rarr; phrases &rarr; meaning.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2>5. Next-Character Predictions</h2>
+    <p class="description">For 4 famous prompts, what does the model think comes next? Shows confidence distribution over all 65 possible characters.</p>
+    <img src="5_next_char_predictions.jpg" alt="Next character predictions">
+    <div class="insight">
+      <strong>Key insight:</strong> "wherefore art thou R" &rarr; "o" at 98.8% confidence. "To be or not to b" &rarr; "e" at 87.7%. The model is extremely confident on well-known phrases. For "is not str" it's less sure (48.6% "a" for "strained") because multiple completions are plausible — this uncertainty is a feature, not a bug.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2>6. Embedding Similarity</h2>
+    <p class="description">How the model internally represents each character. Red = the model sees them as similar. Blue = different. Nobody told the model what letters are — it figured this out from context.</p>
+    <img src="6_embedding_similarity.jpg" alt="Embedding similarity">
+    <div class="insight">
+      <strong>Key insight:</strong> Lowercase letters cluster together. Uppercase cluster together. Punctuation forms its own group. Newline (\n) is most different from everything — it uniquely signals "new speaker" in Shakespeare's dialogue. The model discovered the structure of the alphabet on its own.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2>7. Training Dashboard</h2>
+    <p class="description">The full story at a glance — loss curve, overfitting gap, model card, attention, predictions, and embeddings in one view.</p>
+    <img src="7_dashboard.jpg" alt="Training dashboard">
+    <div class="insight">
+      <strong>Key insight:</strong> The generalization gap bars go green &rarr; orange &rarr; red over training, confirming overfitting. Perplexity of 4.4 means the model narrows 65 possible characters down to ~4 on average. The model card shows the full architecture: 6 layers, 6 heads, 384 embedding dim.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2>Architecture</h2>
+    <p class="description" style="max-width: 100%;">
+      <span class="tag">6 Transformer Blocks</span>
+      <span class="tag">6 Attention Heads</span>
+      <span class="tag">384 Embed Dim</span>
+      <span class="tag">256 Context Window</span>
+      <span class="tag">65 Vocab (char-level)</span>
+      <span class="tag">AdamW Optimizer</span>
+      <span class="tag">0.2 Dropout</span>
+      <span class="tag">5000 Steps</span>
+    </p>
+    <div class="insight" style="margin-top: 16px;">
+      <strong>This is the same architecture as GPT and Claude</strong> — self-attention with Q/K/V, multi-head attention, feed-forward networks, residual connections, layer normalization, and causal masking. The only difference is scale: 10.8M params vs trillions, 65-char vocab vs 100K+ tokens, 256-char context vs 128K+ tokens.
+    </div>
+  </div>
+</div>
+</body>
+</html>

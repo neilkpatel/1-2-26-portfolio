@@ -80,6 +80,24 @@
   ],
   "experimental": [
     {
+      "name": "Shakespeare Transformer: Training from Scratch",
+      "date": "2/21/26",
+      "description": "Built a 10.8M parameter transformer from raw PyTorch — same architecture as GPT/Claude. Trained on Shakespeare using an H100 GPU, generating 7 visualizations that reveal how the model learns language.",
+      "tags": ["PyTorch", "Transformers", "Modal (H100 GPU)", "Deep Learning"],
+      "icon": "🧠",
+      "report": "/transformer/report.html",
+      "images": [
+        {"src": "/transformer/1_loss_curve.jpg", "caption": "Training loss dropping from random guessing to coherent Shakespeare"},
+        {"src": "/transformer/5_next_char_predictions.jpg", "caption": "Model predicts next character with 98.8% confidence"}
+      ],
+      "highlights": [
+        "Loss dropped from 4.3 (random guessing) to 1.07 in 5,000 training steps on an H100 GPU",
+        "Attention heads self-organized: early layers learn spelling, deep layers learn grammar",
+        "Model predicts 'wherefore art thou R→o' with 98.8% confidence — learned Shakespeare's patterns",
+        "Embedding space reveals the model discovered letter categories (vowels, consonants, punctuation) on its own"
+      ]
+    },
+    {
       "name": "AlphaGenome: Eye Color Variant Analysis",
       "date": "2/21/26",
       "description": "Investigated how a single DNA mutation determines blue vs brown eye color using DeepMind's AlphaGenome API. Designed controlled experiments proving the model reads DNA sequence rather than memorizing results.",

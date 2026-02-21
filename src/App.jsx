@@ -144,7 +144,7 @@ function App() {
             {/* Stats Bar */}
             <div className="mb-12 grid grid-cols-3 md:grid-cols-6 gap-4">
               {[
-                { value: '9', label: 'Projects Built' },
+                { value: '10', label: 'Projects Built' },
                 { value: '4', label: 'In Production' },
                 { value: '100+', label: 'Active Users' },
                 { value: '3', label: 'Databases Designed' },
@@ -342,7 +342,15 @@ function App() {
                         try_it()
                       </button>
                     )}
-                    {project.images && !project.demo && (
+                    {project.report && (
+                      <button
+                        onClick={() => window.open(project.report, '_blank')}
+                        className="flex-1 text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
+                      >
+                        view_report()
+                      </button>
+                    )}
+                    {project.images && !project.demo && !project.report && (
                       <button
                         onClick={() => window.open(project.images[0].src, '_blank')}
                         className="flex-1 text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
