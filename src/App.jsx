@@ -144,8 +144,8 @@ function App() {
             {/* Stats Bar */}
             <div className="mb-12 grid grid-cols-3 md:grid-cols-6 gap-4">
               {[
-                { value: '8', label: 'Projects Built' },
-                { value: '3', label: 'In Production' },
+                { value: '9', label: 'Projects Built' },
+                { value: '4', label: 'In Production' },
                 { value: '100+', label: 'Active Users' },
                 { value: '3', label: 'Databases Designed' },
                 { value: '44+', label: 'Tests Written' },
@@ -168,23 +168,39 @@ function App() {
               {productionProjects.map((project, index) => (
                 <div
                   key={index}
-                  className="group relative bg-[#111] rounded-lg border border-gray-800 overflow-hidden hover:border-green-500/50 transition-all duration-300"
+                  className={`group relative bg-[#111] rounded-lg overflow-hidden transition-all duration-300 ${
+                    project.featured
+                      ? 'border-2 border-yellow-500/60 hover:border-yellow-400 shadow-lg shadow-yellow-500/10'
+                      : 'border border-gray-800 hover:border-green-500/50'
+                  }`}
                 >
+                  {/* Featured glow */}
+                  {project.featured && (
+                    <div className="absolute -inset-px bg-gradient-to-r from-yellow-500/20 via-amber-500/10 to-yellow-500/20 rounded-lg pointer-events-none"></div>
+                  )}
                   {/* Terminal Header */}
-                  <div className="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2 flex items-center gap-2">
+                  <div className="relative bg-[#1a1a1a] border-b border-gray-800 px-4 py-2 flex items-center gap-2">
                     <div className="flex gap-1.5">
                       <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
                       <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                       <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                     </div>
                     <span className="ml-2 text-xs font-mono text-gray-500">{project.demo.replace('https://', '')}</span>
-                    <span className="ml-auto px-2 py-0.5 bg-green-500/20 text-green-400 text-xs font-mono rounded">LIVE</span>
+                    {project.featured ? (
+                      <span className="ml-auto px-2 py-0.5 bg-yellow-500/20 text-yellow-400 text-xs font-mono rounded border border-yellow-500/30">NEW</span>
+                    ) : (
+                      <span className="ml-auto px-2 py-0.5 bg-green-500/20 text-green-400 text-xs font-mono rounded">LIVE</span>
+                    )}
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-5">
+                  <div className="relative p-5">
                     {/* Project Name */}
-                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-green-400 transition-colors">
+                    <h3 className={`text-xl font-bold mb-1 transition-colors ${
+                      project.featured
+                        ? 'text-yellow-400 group-hover:text-yellow-300'
+                        : 'text-white group-hover:text-green-400'
+                    }`}>
                       {project.name}
                     </h3>
                     <p className="text-gray-400 text-sm mb-4 leading-relaxed">{project.description}</p>

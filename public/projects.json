@@ -1,6 +1,23 @@
 {
   "production": [
     {
+      "name": "Kitchen Sink",
+      "date": "2/20/26",
+      "featured": true,
+      "description": "Snap a photo of your fridge and get instant recipe ideas. AI identifies your ingredients, rates your fridge out of 10, and roasts your food choices — then suggests what to cook.",
+      "github": "https://github.com/neilkpatel/2_20_26_kitchen-sink",
+      "demo": "https://22026kitchen-sink.vercel.app",
+      "tags": ["React", "Vite", "Claude API", "Vision AI", "Vercel"],
+      "icon": "🍳",
+      "highlights": [
+        "Claude vision API identifies ingredients from a single fridge photo",
+        "AI rates your fridge 1-10 on variety, nutrition, and cooking potential",
+        "Roast Mode for a savage (but playful) critique of your fridge contents",
+        "Editable ingredient list with on-the-fly recipe regeneration",
+        "Server-side API proxy keeps keys secure with client-side image compression"
+      ]
+    },
+    {
       "name": "Sup",
       "date": "2/16/26",
       "description": "\"Who's free to hang\" PWA. One-tap broadcasting to your squad with push notifications, real-time map with midpoint calculation, and bar suggestions near the group.",
@@ -30,22 +47,6 @@
         "Dynamic schedule that auto-labels the next upcoming event",
         "Contact form with real-time validation and API submission",
         "Performance-optimized font loading that doesn't block page render"
-      ]
-    },
-    {
-      "name": "Kitchen Sink",
-      "date": "2/20/26",
-      "description": "Snap a photo of your fridge and get instant recipe ideas. AI identifies your ingredients, rates your fridge out of 10, and roasts your food choices — then suggests what to cook.",
-      "github": "https://github.com/neilkpatel/2_20_26_kitchen-sink",
-      "demo": "https://22026kitchen-sink.vercel.app",
-      "tags": ["React", "Vite", "Claude API", "Vision AI", "Vercel"],
-      "icon": "🍳",
-      "highlights": [
-        "Claude vision API identifies ingredients from a single fridge photo",
-        "AI rates your fridge 1-10 on variety, nutrition, and cooking potential",
-        "Roast Mode for a savage (but playful) critique of your fridge contents",
-        "Editable ingredient list with on-the-fly recipe regeneration",
-        "Server-side API proxy keeps keys secure with client-side image compression"
       ]
     },
     {
