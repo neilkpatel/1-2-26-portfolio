@@ -63,6 +63,12 @@ function App() {
                   {item.toLowerCase()}
                 </button>
               ))}
+              <a
+                href="https://22226archway.vercel.app"
+                className="text-sm font-mono text-gray-400 hover:text-green-400 transition-colors"
+              >
+                collab
+              </a>
             </div>
           </div>
         </div>
@@ -474,7 +480,6 @@ function App() {
             <p className="text-gray-600 text-xs font-mono">
               © {new Date().getFullYear()} Neil Patel
             </p>
-            <a href="https://22226archway.vercel.app" className="text-gray-600 hover:text-green-400 text-xs font-mono mt-3 inline-block transition-colors">collab</a>
           </div>
         </footer>
       </div>
