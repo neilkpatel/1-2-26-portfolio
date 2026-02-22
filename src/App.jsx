@@ -17,6 +17,7 @@ function App() {
   const [experimentalProjects, setExperimentalProjects] = useState([])
   const [roadmap, setRoadmap] = useState([])
   const [activeSection, setActiveSection] = useState('home')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     fetch('/projects.json')
@@ -70,7 +71,43 @@ function App() {
                 collab
               </a>
             </div>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden text-gray-400 hover:text-green-400 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
+          {mobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-2 flex flex-col gap-4">
+              {['Home', 'Projects', 'Roadmap', 'Contact'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => {
+                    const sectionId = item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase();
+                    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+                    setActiveSection(item.toLowerCase());
+                    setMobileMenuOpen(false);
+                  }}
+                  className="text-sm font-mono text-gray-400 hover:text-green-400 transition-colors text-left"
+                >
+                  {item.toLowerCase()}
+                </button>
+              ))}
+              <a
+                href="https://22226archway.vercel.app"
+                className="text-sm font-mono text-gray-400 hover:text-green-400 transition-colors"
+              >
+                collab
+              </a>
+            </div>
+          )}
         </div>
       </nav>
 
