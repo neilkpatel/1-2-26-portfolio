@@ -474,6 +474,7 @@ function App() {
             <p className="text-gray-600 text-xs font-mono">
               © {new Date().getFullYear()} Neil Patel
             </p>
+            <a href="https://22226archway.vercel.app" className="text-gray-800 hover:text-green-400 text-[10px] font-mono mt-3 inline-block transition-colors">&#x25B3;</a>
           </div>
         </footer>
       </div>
