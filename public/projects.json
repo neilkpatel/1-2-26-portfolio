@@ -87,6 +87,7 @@
       "icon": "🐦",
       "github": "https://github.com/neilkpatel/2_23_26_bird-strikes",
       "report": "https://22326bird-strikes.vercel.app",
+      "notebook": "https://github.com/neilkpatel/2_23_26_bird-strikes/blob/main/analysis.ipynb",
       "images": [],
       "highlights": [
         "Tuned Random Forest achieved 87.8% AUC — caught and fixed 20% overfitting gap by constraining tree depth, leaf size, and feature splits",

@@ -395,6 +395,14 @@ function App() {
                         view_report()
                       </button>
                     )}
+                    {project.notebook && (
+                      <button
+                        onClick={() => window.open(project.notebook, '_blank')}
+                        className="flex-1 text-center px-4 py-2 bg-gray-700 text-gray-200 rounded font-mono text-sm font-medium hover:bg-gray-600 transition-colors cursor-pointer border border-gray-600"
+                      >
+                        view_models()
+                      </button>
+                    )}
                     {project.images && !project.demo && !project.report && (
                       <button
                         onClick={() => window.open(project.images[0].src, '_blank')}
