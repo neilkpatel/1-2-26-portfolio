@@ -91,7 +91,7 @@
       "images": [],
       "highlights": [
         "Tuned Random Forest achieved 87.8% AUC — caught and fixed 20% overfitting gap by constraining tree depth, leaf size, and feature splits",
-        "Animal size is the #1 damage predictor (58% importance) — a deer strike is 68x more likely to cause damage than a sparrow",
+        "40% of the dataset is 'Unknown bird' with no remains collected — a real-world data quality issue that shapes every analytical conclusion",
         "Severe damage rate dropped 8x since 2013 despite record strikes — planes got tougher post-Miracle on the Hudson",
         "5-fold cross-validation confirmed all models generalize consistently (± <1% across folds)"
       ]
