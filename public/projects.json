@@ -80,6 +80,22 @@
   ],
   "experimental": [
     {
+      "name": "FAA Bird Strikes: Predicting Aircraft Damage",
+      "date": "2/23/26",
+      "description": "End-to-end data science project analyzing 316,823 wildlife-aircraft collisions from 1990-2024. Built 3 ML models (Logistic Regression, Random Forest, XGBoost) to predict aircraft damage, diagnosed and fixed overfitting, and validated with cross-validation.",
+      "tags": ["Python", "scikit-learn", "XGBoost", "pandas", "Chart.js"],
+      "icon": "🐦",
+      "github": "https://github.com/neilkpatel/2_23_26_bird-strikes",
+      "demo": "https://22326bird-strikes.vercel.app",
+      "images": [],
+      "highlights": [
+        "Tuned Random Forest achieved 87.8% AUC — caught and fixed 20% overfitting gap by constraining tree depth, leaf size, and feature splits",
+        "Animal size is the #1 damage predictor (58% importance) — a deer strike is 68x more likely to cause damage than a sparrow",
+        "Severe damage rate dropped 8x since 2013 despite record strikes — planes got tougher post-Miracle on the Hudson",
+        "5-fold cross-validation confirmed all models generalize consistently (± <1% across folds)"
+      ]
+    },
+    {
       "name": "Shakespeare Transformer: Training from Scratch",
       "date": "2/21/26",
       "description": "Built a 10.8M parameter transformer from raw PyTorch — same architecture as GPT/Claude. Trained on Shakespeare using an H100 GPU, generating 7 visualizations that reveal how the model learns language.",
@@ -95,22 +111,6 @@
         "Attention heads self-organized: early layers learn spelling, deep layers learn grammar",
         "Model predicts 'wherefore art thou R→o' with 98.8% confidence — learned Shakespeare's patterns",
         "Embedding space reveals the model discovered letter categories (vowels, consonants, punctuation) on its own"
-      ]
-    },
-    {
-      "name": "FAA Bird Strikes: Predicting Aircraft Damage",
-      "date": "2/23/26",
-      "description": "End-to-end data science project analyzing 316,823 wildlife-aircraft collisions from 1990-2024. Built 3 ML models (Logistic Regression, Random Forest, XGBoost) to predict aircraft damage, diagnosed and fixed overfitting, and validated with cross-validation.",
-      "tags": ["Python", "scikit-learn", "XGBoost", "pandas", "Chart.js"],
-      "icon": "🐦",
-      "github": "https://github.com/neilkpatel/2_23_26_bird-strikes",
-      "demo": "https://22326bird-strikes.vercel.app",
-      "images": [],
-      "highlights": [
-        "Tuned Random Forest achieved 87.8% AUC — caught and fixed 20% overfitting gap by constraining tree depth, leaf size, and feature splits",
-        "Animal size is the #1 damage predictor (58% importance) — a deer strike is 68x more likely to cause damage than a sparrow",
-        "Severe damage rate dropped 8x since 2013 despite record strikes — planes got tougher post-Miracle on the Hudson",
-        "5-fold cross-validation confirmed all models generalize consistently (± <1% across folds)"
       ]
     },
     {
