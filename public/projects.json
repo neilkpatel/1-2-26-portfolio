@@ -88,7 +88,9 @@
       "github": "https://github.com/neilkpatel/2_23_26_bird-strikes",
       "report": "https://22326bird-strikes.vercel.app",
       "notebook": "https://github.com/neilkpatel/2_23_26_bird-strikes/blob/main/analysis.ipynb",
-      "images": [],
+      "images": [
+        {"src": "/screenshots/bird_strikes.jpg", "caption": "Model diagnostics: train vs test AUC and cross-validation scores"}
+      ],
       "highlights": [
         "Models revealed animal size (58%), aircraft mass (11%), and altitude (8%) as the top 3 damage drivers — lighter GA planes hitting large birds are 10x more vulnerable than commercial jets",
         "Pilot warnings barely reduce damage — warned vs. unwarned strike outcomes are nearly identical, suggesting strikes happen too fast to mitigate",
