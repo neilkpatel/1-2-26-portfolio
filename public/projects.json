@@ -92,7 +92,7 @@
       "highlights": [
         "Models revealed animal size (58%), aircraft mass (11%), and altitude (8%) as the top 3 damage drivers — lighter GA planes hitting large birds are 10x more vulnerable than commercial jets",
         "Pilot warnings barely reduce damage — warned vs. unwarned strike outcomes are nearly identical, suggesting strikes happen too fast to mitigate",
-        "Strikes grew 8.5x per 10K flights even after normalizing for volume — not just more planes, but recovering bird populations and stricter reporting mandates",
+        "Strikes hit record highs but severe damage dropped 8x — post-2009 engine certifications and airport wildlife programs are quietly winning, even as bird populations recover",
         "Caught a 20% overfitting gap in Random Forest — 3 hyperparameter constraints turned the worst model (77.5% AUC) into the best (87.8% AUC)"
       ]
     },
