@@ -98,6 +98,22 @@
       ]
     },
     {
+      "name": "FAA Bird Strikes: Predicting Aircraft Damage",
+      "date": "2/23/26",
+      "description": "End-to-end data science project analyzing 316,823 wildlife-aircraft collisions from 1990-2024. Built 3 ML models (Logistic Regression, Random Forest, XGBoost) to predict aircraft damage, diagnosed and fixed overfitting, and validated with cross-validation.",
+      "tags": ["Python", "scikit-learn", "XGBoost", "pandas", "Chart.js"],
+      "icon": "🐦",
+      "github": "https://github.com/neilkpatel/2_23_26_bird-strikes",
+      "demo": "https://22326bird-strikes.vercel.app",
+      "images": [],
+      "highlights": [
+        "Tuned Random Forest achieved 87.8% AUC — caught and fixed 20% overfitting gap by constraining tree depth, leaf size, and feature splits",
+        "Animal size is the #1 damage predictor (58% importance) — a deer strike is 68x more likely to cause damage than a sparrow",
+        "Severe damage rate dropped 8x since 2013 despite record strikes — planes got tougher post-Miracle on the Hudson",
+        "5-fold cross-validation confirmed all models generalize consistently (± <1% across folds)"
+      ]
+    },
+    {
       "name": "AlphaGenome: Eye Color Variant Analysis",
       "date": "2/21/26",
       "description": "Investigated how a single DNA mutation determines blue vs brown eye color using DeepMind's AlphaGenome API. Designed controlled experiments proving the model reads DNA sequence rather than memorizing results.",
@@ -236,6 +252,12 @@
       "name": "Build a Diffusion Model from Scratch",
       "description": "Train a denoiser on images, visualize the full denoising process step by step",
       "tags": ["Diffusion", "PyTorch", "Computer Vision"]
+    },
+    {
+      "name": "FAA Bird Strikes: Predicting Aircraft Damage",
+      "description": "316K wildlife strikes — EDA, 3 classifiers, overfitting diagnosis, cross-validation. Full DS pipeline from raw data to interactive dashboard.",
+      "tags": ["pandas", "scikit-learn", "XGBoost", "Chart.js"],
+      "done": true
     },
     {
       "name": "NBA Player Value Analysis",
