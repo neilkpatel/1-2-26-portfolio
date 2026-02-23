@@ -229,6 +229,12 @@
       "done": true
     },
     {
+      "name": "FAA Bird Strikes: Predicting Aircraft Damage",
+      "description": "316K wildlife strikes — EDA, 3 classifiers, overfitting diagnosis, cross-validation. Full DS pipeline from raw data to interactive dashboard.",
+      "tags": ["pandas", "scikit-learn", "XGBoost", "Chart.js"],
+      "done": true
+    },
+    {
       "name": "Fine-Tune an Open-Source LLM",
       "description": "LoRA/QLoRA fine-tuning on Llama or Mistral with custom data",
       "tags": ["LoRA", "Hugging Face", "PEFT"]
@@ -252,12 +258,6 @@
       "name": "Build a Diffusion Model from Scratch",
       "description": "Train a denoiser on images, visualize the full denoising process step by step",
       "tags": ["Diffusion", "PyTorch", "Computer Vision"]
-    },
-    {
-      "name": "FAA Bird Strikes: Predicting Aircraft Damage",
-      "description": "316K wildlife strikes — EDA, 3 classifiers, overfitting diagnosis, cross-validation. Full DS pipeline from raw data to interactive dashboard.",
-      "tags": ["pandas", "scikit-learn", "XGBoost", "Chart.js"],
-      "done": true
     },
     {
       "name": "NBA Player Value Analysis",
