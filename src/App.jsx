@@ -70,6 +70,12 @@ function App() {
               >
                 collab
               </a>
+              <a
+                href="https://22426rtc-radar.vercel.app"
+                className="text-sm font-mono text-gray-400 hover:text-green-400 transition-colors"
+              >
+                collab 2
+              </a>
             </div>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -105,6 +111,12 @@ function App() {
                 className="text-sm font-mono text-gray-400 hover:text-green-400 transition-colors"
               >
                 collab
+              </a>
+              <a
+                href="https://22426rtc-radar.vercel.app"
+                className="text-sm font-mono text-gray-400 hover:text-green-400 transition-colors"
+              >
+                collab 2
               </a>
             </div>
           )}
