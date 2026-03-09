@@ -16,6 +16,8 @@ function App() {
   const [productionProjects, setProductionProjects] = useState([])
   const [experimentalProjects, setExperimentalProjects] = useState([])
   const [roadmap, setRoadmap] = useState([])
+  const [events, setEvents] = useState([])
+  const [eventsLoading, setEventsLoading] = useState(true)
   const [activeSection, setActiveSection] = useState('home')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -28,6 +30,14 @@ function App() {
         setRoadmap(data.roadmap || [])
       })
       .catch(err => console.error('Error loading projects:', err))
+  }, [])
+
+  useEffect(() => {
+    fetch('/api/events')
+      .then(res => res.json())
+      .then(data => setEvents(data.events || []))
+      .catch(err => console.error('Error loading events:', err))
+      .finally(() => setEventsLoading(false))
   }, [])
 
 
@@ -51,7 +61,7 @@ function App() {
               ~/neil
             </div>
             <div className="hidden md:flex gap-8">
-              {['Home', 'Projects', 'Roadmap', 'Contact'].map((item) => (
+              {['Home', 'Projects', 'Events', 'Roadmap', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => {
@@ -92,7 +102,7 @@ function App() {
           </div>
           {mobileMenuOpen && (
             <div className="md:hidden mt-4 pb-2 flex flex-col gap-4">
-              {['Home', 'Projects', 'Roadmap', 'Contact'].map((item) => (
+              {['Home', 'Projects', 'Events', 'Roadmap', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => {
@@ -440,6 +450,93 @@ function App() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Events Section */}
+        <section id="events" className="py-16 px-6 border-t border-gray-800">
+          <div className="container mx-auto max-w-7xl">
+            <div className="mb-12">
+              <p className="font-mono text-green-400 text-sm mb-2">$ curl api/events</p>
+              <h2 className="text-3xl font-bold text-white">Upcoming AI Events <span className="text-gray-500">— NYC</span></h2>
+            </div>
+
+            {eventsLoading ? (
+              <div className="text-center py-12">
+                <p className="font-mono text-gray-500 animate-pulse">fetching events...</p>
+              </div>
+            ) : events.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="font-mono text-gray-500">no upcoming events found</p>
+              </div>
+            ) : (
+              <div className="bg-[#111] rounded-lg border border-gray-800 overflow-hidden">
+                <div className="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2 flex items-center gap-2">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                  </div>
+                  <span className="ml-2 text-xs font-mono text-gray-500">~/neil/events</span>
+                  <span className="ml-auto px-2 py-0.5 bg-cyan-500/20 text-cyan-400 text-xs font-mono rounded">{events.length} events</span>
+                </div>
+                <div className="divide-y divide-gray-800/50">
+                  {(() => {
+                    const grouped = {};
+                    events.forEach(ev => {
+                      const dt = new Date(ev.start);
+                      const dayKey = dt.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', timeZone: 'America/New_York' });
+                      if (!grouped[dayKey]) grouped[dayKey] = [];
+                      grouped[dayKey].push(ev);
+                    });
+                    return Object.entries(grouped).map(([day, dayEvents]) => (
+                      <div key={day}>
+                        <div className="px-5 pt-4 pb-2">
+                          <h3 className="text-xs font-mono font-semibold text-gray-500 uppercase tracking-wider">{day}</h3>
+                        </div>
+                        {dayEvents.map((ev, i) => {
+                          const dt = new Date(ev.start);
+                          const timeStr = dt.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'America/New_York' });
+                          return (
+                            <a
+                              key={i}
+                              href={ev.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex gap-4 px-5 py-3 hover:bg-[#1a1a28] transition-colors group"
+                            >
+                              <div className="text-xs font-mono text-green-400/70 min-w-[70px] pt-0.5 shrink-0">{timeStr}</div>
+                              <div className="flex-1 min-w-0">
+                                <div className="text-sm font-semibold text-white group-hover:text-green-400 transition-colors truncate">{ev.name}</div>
+                                {ev.location && <div className="text-xs text-gray-500 font-mono mt-0.5 truncate">{ev.location}</div>}
+                                {ev.hosts && <div className="text-xs text-gray-600 font-mono mt-0.5 truncate">{ev.hosts}</div>}
+                                <div className="flex gap-2 mt-1.5 flex-wrap">
+                                  {ev.isFree && !ev.soldOut && (
+                                    <span className="px-1.5 py-0.5 bg-green-500/10 text-green-400 text-[10px] font-mono rounded border border-green-500/20">free</span>
+                                  )}
+                                  {ev.soldOut && (
+                                    <span className="px-1.5 py-0.5 bg-red-500/10 text-red-400 text-[10px] font-mono rounded border border-red-500/20">sold out</span>
+                                  )}
+                                  {!ev.isFree && !ev.soldOut && (
+                                    <span className="px-1.5 py-0.5 bg-yellow-500/10 text-yellow-400 text-[10px] font-mono rounded border border-yellow-500/20">paid</span>
+                                  )}
+                                  {ev.guestCount > 0 && (
+                                    <span className="px-1.5 py-0.5 bg-gray-700/50 text-gray-400 text-[10px] font-mono rounded">{ev.guestCount} going</span>
+                                  )}
+                                  <span className={`px-1.5 py-0.5 text-[10px] font-mono rounded ${ev.source === 'luma' ? 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20' : 'bg-purple-500/10 text-purple-400 border border-purple-500/20'}`}>
+                                    {ev.source}
+                                  </span>
+                                </div>
+                              </div>
+                            </a>
+                          );
+                        })}
+                      </div>
+                    ));
+                  })()}
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
