@@ -327,7 +327,7 @@ function App() {
               {experimentalProjects.map((project, index) => (
                 <div
                   key={index}
-                  className="group relative bg-[#111] rounded-lg border border-gray-800 overflow-hidden hover:border-green-500/50 transition-all duration-300"
+                  className="group relative bg-[#111] rounded-lg border border-gray-800 overflow-hidden hover:border-green-500/50 transition-all duration-300 flex flex-col"
                 >
                   {/* Terminal Header */}
                   <div className="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2 flex items-center gap-2">
@@ -341,7 +341,7 @@ function App() {
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-5">
+                  <div className="p-5 flex-1">
                     <h3 className="text-xl font-bold text-white mb-1 group-hover:text-green-400 transition-colors">
                       {project.name}
                     </h3>
