@@ -80,6 +80,23 @@
   ],
   "experimental": [
     {
+      "name": "NYC AI Agent",
+      "date": "2/23/26",
+      "description": "Autonomous AI agent that researches NYC tech news, events, and trends from multiple sources, then delivers a styled daily intelligence brief to your inbox. Features a 9-tool agent loop, stateful memory, and interactive chat mode.",
+      "tags": ["Python", "Claude API", "Anthropic SDK", "Agent", "Tool Use", "NewsAPI"],
+      "icon": "🤖",
+      "github": "https://github.com/neilkpatel/2_23_26_nyc-ai-agent",
+      "images": [],
+      "highlights": [
+        "9-tool agent loop using Anthropic's tool_runner with up to 15 autonomous iterations per run",
+        "Multi-source retrieval: NewsAPI, HackerNews Algolia, and Luma Events API",
+        "Stateful JSON memory — tracks items across runs and learns from user feedback",
+        "Generates styled HTML email briefs delivered automatically via Gmail CLI",
+        "3 modes: automated daily brief, interactive chat, and feedback loop for preference tuning",
+        "Scheduled via launchd for fully hands-off daily execution"
+      ]
+    },
+    {
       "name": "FAA Bird Strikes: Predicting Aircraft Damage",
       "date": "2/23/26",
       "description": "End-to-end data science project analyzing 316,823 wildlife-aircraft collisions from 1990-2024. Built 3 ML models (Logistic Regression, Random Forest, XGBoost) to predict aircraft damage, diagnosed and fixed overfitting, and validated with cross-validation.",
@@ -127,10 +144,10 @@
         {"src": "/alphagenome/1_rnaseq_melanocyte.jpg", "caption": "RNA-seq: blue vs brown eye alleles"}
       ],
       "highlights": [
-        "Variant scoring identified OCA2 as the top affected gene — matching decades of lab research",
-        "Cross-tissue analysis confirmed the effect is strongest in melanocytes (pigment cells)",
-        "Scrambled DNA test proved the model reads sequence, not coordinates (correlation: -0.03)",
-        "Histone ChIP-seq revealed a 16x enhancer activity difference between alleles"
+        "Fed the model shuffled and fake DNA across 4 control tests — predictions collapsed, proving it reads genetic sequence rather than memorizing known answers",
+        "Ran RNA-seq predictions across a 1MB DNA window comparing blue vs brown alleles — OCA2 lit up as the top affected gene, matching decades of lab research",
+        "Compared the mutation's effect across different cell types — signal only fires in melanocytes (pigment cells), confirming it targets the right tissue",
+        "Histone mark predictions show the brown-eye allele has a 16x stronger enhancer signal, meaning its 'on switch' for pigment production is far more active"
       ]
     },
     {
