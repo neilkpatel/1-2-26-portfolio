@@ -86,6 +86,9 @@
       "tags": ["Python", "Claude API", "Anthropic SDK", "Agent", "Tool Use", "NewsAPI"],
       "icon": "🤖",
       "github": "https://github.com/neilkpatel/2_23_26_nyc-ai-agent",
+      "images": [
+        {"src": "/screenshots/nyc_ai_agent.png", "caption": "AI-curated NYC tech events calendar"}
+      ],
       "highlights": [
         "9-tool agent loop using Anthropic's tool_runner with up to 15 autonomous iterations per run",
         "Multi-source retrieval: NewsAPI, HackerNews Algolia, and Luma Events API",
