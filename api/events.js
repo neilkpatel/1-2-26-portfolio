@@ -103,6 +103,7 @@ export default async function handler(req, res) {
     const events = [];
     const now = new Date();
     const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const maxDate = new Date(todayStart.getTime() + 30 * 24 * 60 * 60 * 1000);
 
     // Process Luma events
     for (const entry of lumaEntries) {
@@ -120,7 +121,7 @@ export default async function handler(req, res) {
         dt = new Date(startAt);
         if (isNaN(dt.getTime())) continue;
       } catch { continue; }
-      if (dt < todayStart) continue;
+      if (dt < todayStart || dt > maxDate) continue;
 
       const addr = ev.geo_address_info || {};
       const hosts = (entry.hosts || []).map(h => h.name).filter(Boolean);
@@ -154,7 +155,7 @@ export default async function handler(req, res) {
         dt = new Date(me.start_time);
         if (isNaN(dt.getTime())) continue;
       } catch { continue; }
-      if (dt < todayStart) continue;
+      if (dt < todayStart || dt > maxDate) continue;
 
       events.push({
         name: title || 'Untitled',
