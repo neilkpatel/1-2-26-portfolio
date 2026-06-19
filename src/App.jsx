@@ -135,6 +135,23 @@ function App() {
 
       {/* Content */}
       <div className="relative z-10 pt-16">
+        {/* World Cup live banner — quick access near the top */}
+        <a
+          href="https://worldcup-2026-dashboard-nine.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block border-b border-green-500/30 bg-green-500/10 hover:bg-green-500/20 transition-colors"
+        >
+          <div className="container mx-auto px-6 py-2.5 flex items-center justify-center gap-2.5 text-sm font-mono">
+            <span className="flex items-center gap-1.5">
+              <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
+              <span className="text-green-400">⚽ World Cup 2026</span>
+            </span>
+            <span className="hidden sm:inline text-gray-400">— live scores · standings · bracket</span>
+            <span className="text-gray-500 group-hover:text-green-400 transition-colors">live_dashboard →</span>
+          </div>
+        </a>
+
         {/* Hero Section */}
         <section id="hero" className="py-12 pb-8 px-6">
           <div className="container mx-auto max-w-7xl">

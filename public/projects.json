@@ -80,6 +80,23 @@
   ],
   "experimental": [
     {
+      "name": "World Cup 2026 Dashboard",
+      "date": "6/10/26",
+      "description": "Live dashboard for the 2026 World Cup — scores, group standings, the Golden Boot race, a knockout bracket, and AI-written match recaps. Pulls everything live from ESPN's public API with no backend.",
+      "demo": "https://worldcup-2026-dashboard-nine.vercel.app",
+      "tags": ["React", "Vite", "Tailwind", "ESPN API", "Claude API"],
+      "icon": "⚽",
+      "images": [
+        {"src": "/screenshots/worldcup.png", "caption": "Live scores and group standings on the Today tab"}
+      ],
+      "highlights": [
+        "Live scores, 12-group standings, and the Golden Boot race — all parsed client-side from ESPN's public API (no backend, no keys)",
+        "Qualification-aware: a best-third-place race and a knockout bracket that fills in as teams advance",
+        "AI-written match recaps via Claude, with ESPN's own report as a no-key fallback",
+        "Auto-refreshes every 60s; mobile-first, verified zero horizontal overflow down to 390px"
+      ]
+    },
+    {
       "name": "NYC AI Agent",
       "date": "2/23/26",
       "description": "Autonomous AI agent that researches NYC tech news, events, and trends from multiple sources, then delivers a styled daily intelligence brief to your inbox. Features a 9-tool agent loop, stateful memory, and interactive chat mode.",
