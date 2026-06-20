@@ -83,7 +83,7 @@
       "name": "World Cup 2026 Dashboard",
       "date": "6/10/26",
       "description": "Live dashboard for the 2026 World Cup — scores, group standings, the Golden Boot race, a knockout bracket, and AI-written match recaps. Pulls everything live from ESPN's public API with no backend.",
-      "demo": "https://worldcup-2026-dashboard-nine.vercel.app",
+      "demo": "https://worldcup.neilkpatel.com",
       "tags": ["React", "Vite", "Tailwind", "ESPN API", "Claude API"],
       "icon": "⚽",
       "images": [

@@ -137,7 +137,7 @@ function App() {
       <div className="relative z-10 pt-16">
         {/* World Cup live banner — quick access near the top */}
         <a
-          href="https://worldcup-2026-dashboard-nine.vercel.app"
+          href="https://worldcup.neilkpatel.com"
           target="_blank"
           rel="noopener noreferrer"
           className="group block border-b border-green-500/30 bg-green-500/10 hover:bg-green-500/20 transition-colors"
