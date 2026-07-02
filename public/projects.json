@@ -7,10 +7,19 @@
       "description": "Snap a photo of your fridge and get instant recipe ideas. AI identifies your ingredients, rates your fridge out of 10, and roasts your food choices — then suggests what to cook.",
       "github": "https://github.com/neilkpatel/2_20_26_kitchen-sink",
       "demo": "https://22026kitchen-sink.vercel.app",
-      "tags": ["React", "Vite", "Claude API", "Vision AI", "Vercel"],
+      "tags": [
+        "React",
+        "Vite",
+        "Claude API",
+        "Vision AI",
+        "Vercel"
+      ],
       "icon": "🍳",
       "images": [
-        {"src": "/screenshots/kitchen_sink.jpg", "caption": "Scan your fridge with AI"}
+        {
+          "src": "/screenshots/kitchen_sink.jpg",
+          "caption": "Scan your fridge with AI"
+        }
       ],
       "highlights": [
         "Claude vision API identifies ingredients from a single fridge photo",
@@ -26,10 +35,20 @@
       "description": "\"Who's free to hang\" PWA. One-tap broadcasting to your squad with push notifications, real-time map with midpoint calculation, and bar suggestions near the group.",
       "github": "https://github.com/neilkpatel/2_16_26_sup-app",
       "demo": "https://sup-app-jet.vercel.app",
-      "tags": ["React", "Supabase", "PostGIS", "Web Push", "PWA", "Leaflet"],
+      "tags": [
+        "React",
+        "Supabase",
+        "PostGIS",
+        "Web Push",
+        "PWA",
+        "Leaflet"
+      ],
       "icon": "📍",
       "images": [
-        {"src": "/screenshots/sup.jpg", "caption": "Real-time map with push notifications"}
+        {
+          "src": "/screenshots/sup.jpg",
+          "caption": "Real-time map with push notifications"
+        }
       ],
       "highlights": [
         "Live updates via WebSockets with automatic polling fallback for reliability",
@@ -45,10 +64,17 @@
       "description": "Marketing website for a Fortune 100 sales executive's growth advisory practice. Clean, minimal design with image carousel and contact form.",
       "github": "https://github.com/neilkpatel/mjgrowth",
       "demo": "https://mjgrowthconsulting.com",
-      "tags": ["HTML/CSS/JS", "Vercel", "Client Work"],
+      "tags": [
+        "HTML/CSS/JS",
+        "Vercel",
+        "Client Work"
+      ],
       "icon": "📈",
       "images": [
-        {"src": "/screenshots/mjgrowth.jpg", "caption": "Growth advisory landing page"}
+        {
+          "src": "/screenshots/mjgrowth.jpg",
+          "caption": "Growth advisory landing page"
+        }
       ],
       "highlights": [
         "Swipe-enabled image carousel with touch gesture detection",
@@ -64,10 +90,18 @@
       "description": "Alliance hub for Last War: Survival Game. Features event schedules, battle strategies, leadership roster, and alliance lore with a tactical military aesthetic.",
       "github": "https://github.com/neilkpatel/horizon-alliance",
       "demo": "https://horizonalliance.me",
-      "tags": ["HTML/CSS/JS", "Vercel", "Gaming", "Community"],
+      "tags": [
+        "HTML/CSS/JS",
+        "Vercel",
+        "Gaming",
+        "Community"
+      ],
       "icon": "⚔️",
       "images": [
-        {"src": "/screenshots/horizon.jpg", "caption": "Alliance hub with leadership roster"}
+        {
+          "src": "/screenshots/horizon.jpg",
+          "caption": "Alliance hub with leadership roster"
+        }
       ],
       "highlights": [
         "Live countdown timer that converts between user's timezone and game time",
@@ -80,14 +114,45 @@
   ],
   "experimental": [
     {
+      "name": "Baton",
+      "date": "6/27/26",
+      "description": "A macOS menu-bar command center for the AI agents you have in flight. Reads the signals Claude Code and Codex already emit — zero manual entry — and surfaces the one that matters: which agent finished its leg and is now waiting on you (\"the baton's with you\").",
+      "tags": [
+        "Python",
+        "macOS",
+        "rumps",
+        "FSEvents",
+        "AI Agents",
+        "Claude Code",
+        "Codex"
+      ],
+      "icon": "🎽",
+      "highlights": [
+        "Event-driven detection via macOS FSEvents — catches an agent hand-off in under a second while idling with zero polling in between (faster AND lighter on battery)",
+        "Unifies two separate agent tools behind one normalized \"track\" contract, so adding a signal source never touches the UI",
+        "Reads each tool's true waiting signal: Claude Code's live session status, and Codex's own unread (blue-dot) state parsed from its Electron store",
+        "Click a session to jump straight to it — raises the exact Terminal.app tab by tty, or opens the Codex thread via its reverse-engineered codex:// deep link",
+        "Stdlib-only Python with an isolated venv; auto-starts at login via a launchd agent; binds to 127.0.0.1 and reads local state only"
+      ]
+    },
+    {
       "name": "World Cup 2026 Dashboard",
       "date": "6/10/26",
       "description": "Live dashboard for the 2026 World Cup — scores, group standings, the Golden Boot race, a knockout bracket, and AI-written match recaps. Pulls everything live from ESPN's public API with no backend.",
       "demo": "https://worldcup.neilkpatel.com",
-      "tags": ["React", "Vite", "Tailwind", "ESPN API", "Claude API"],
+      "tags": [
+        "React",
+        "Vite",
+        "Tailwind",
+        "ESPN API",
+        "Claude API"
+      ],
       "icon": "⚽",
       "images": [
-        {"src": "/screenshots/worldcup.png", "caption": "Live scores and group standings on the Today tab"}
+        {
+          "src": "/screenshots/worldcup.png",
+          "caption": "Live scores and group standings on the Today tab"
+        }
       ],
       "highlights": [
         "Live scores, 12-group standings, and the Golden Boot race — all parsed client-side from ESPN's public API (no backend, no keys)",
@@ -100,11 +165,21 @@
       "name": "NYC AI Agent",
       "date": "2/23/26",
       "description": "Autonomous AI agent that researches NYC tech news, events, and trends from multiple sources, then delivers a styled daily intelligence brief to your inbox. Features a 9-tool agent loop, stateful memory, and interactive chat mode.",
-      "tags": ["Python", "Claude API", "Anthropic SDK", "Agent", "Tool Use", "NewsAPI"],
+      "tags": [
+        "Python",
+        "Claude API",
+        "Anthropic SDK",
+        "Agent",
+        "Tool Use",
+        "NewsAPI"
+      ],
       "icon": "🤖",
       "github": "https://github.com/neilkpatel/2_23_26_nyc-ai-agent",
       "images": [
-        {"src": "/screenshots/nyc_ai_agent.png", "caption": "AI-curated NYC tech events calendar"}
+        {
+          "src": "/screenshots/nyc_ai_agent.png",
+          "caption": "AI-curated NYC tech events calendar"
+        }
       ],
       "highlights": [
         "9-tool agent loop using Anthropic's tool_runner with up to 15 autonomous iterations per run",
@@ -119,13 +194,22 @@
       "name": "FAA Bird Strikes: Predicting Aircraft Damage",
       "date": "2/23/26",
       "description": "End-to-end data science project analyzing 316,823 wildlife-aircraft collisions from 1990-2024. Built 3 ML models (Logistic Regression, Random Forest, XGBoost) to predict aircraft damage, diagnosed and fixed overfitting, and validated with cross-validation.",
-      "tags": ["Python", "scikit-learn", "XGBoost", "pandas", "Chart.js"],
+      "tags": [
+        "Python",
+        "scikit-learn",
+        "XGBoost",
+        "pandas",
+        "Chart.js"
+      ],
       "icon": "🐦",
       "github": "https://github.com/neilkpatel/2_23_26_bird-strikes",
       "report": "https://22326bird-strikes.vercel.app",
       "notebook": "https://github.com/neilkpatel/2_23_26_bird-strikes/blob/main/analysis.ipynb",
       "images": [
-        {"src": "/screenshots/bird_strikes.jpg", "caption": "Model diagnostics: train vs test AUC and cross-validation scores"}
+        {
+          "src": "/screenshots/bird_strikes.jpg",
+          "caption": "Model diagnostics: train vs test AUC and cross-validation scores"
+        }
       ],
       "highlights": [
         "Models revealed animal size (58%), aircraft mass (11%), and altitude (8%) as the top 3 damage drivers — lighter GA planes hitting large birds are 10x more vulnerable than commercial jets",
@@ -138,12 +222,23 @@
       "name": "Shakespeare Transformer: Training from Scratch",
       "date": "2/21/26",
       "description": "Built a 10.8M parameter transformer from raw PyTorch — same architecture as GPT/Claude. Trained on Shakespeare using an H100 GPU, generating 7 visualizations that reveal how the model learns language.",
-      "tags": ["PyTorch", "Transformers", "Modal (H100 GPU)", "Deep Learning"],
+      "tags": [
+        "PyTorch",
+        "Transformers",
+        "Modal (H100 GPU)",
+        "Deep Learning"
+      ],
       "icon": "🧠",
       "report": "/transformer/report.html",
       "images": [
-        {"src": "/transformer/1_loss_curve.jpg", "caption": "Training loss dropping from random guessing to coherent Shakespeare"},
-        {"src": "/transformer/5_next_char_predictions.jpg", "caption": "Model predicts next character with 98.8% confidence"}
+        {
+          "src": "/transformer/1_loss_curve.jpg",
+          "caption": "Training loss dropping from random guessing to coherent Shakespeare"
+        },
+        {
+          "src": "/transformer/5_next_char_predictions.jpg",
+          "caption": "Model predicts next character with 98.8% confidence"
+        }
       ],
       "highlights": [
         "Loss dropped from 4.3 (random guessing) to 1.07 in 5,000 training steps on an H100 GPU",
@@ -156,11 +251,22 @@
       "name": "AlphaGenome: Eye Color Variant Analysis",
       "date": "2/21/26",
       "description": "Investigated how a single DNA mutation determines blue vs brown eye color using DeepMind's AlphaGenome API. Designed controlled experiments proving the model reads DNA sequence rather than memorizing results.",
-      "tags": ["Python", "AlphaGenome API", "Genomics", "Deep Learning"],
+      "tags": [
+        "Python",
+        "AlphaGenome API",
+        "Genomics",
+        "Deep Learning"
+      ],
       "icon": "🧬",
       "images": [
-        {"src": "/alphagenome/4_memorization_test.jpg", "caption": "4 experiments proving the model reads DNA sequence"},
-        {"src": "/alphagenome/1_rnaseq_melanocyte.jpg", "caption": "RNA-seq: blue vs brown eye alleles"}
+        {
+          "src": "/alphagenome/4_memorization_test.jpg",
+          "caption": "4 experiments proving the model reads DNA sequence"
+        },
+        {
+          "src": "/alphagenome/1_rnaseq_melanocyte.jpg",
+          "caption": "RNA-seq: blue vs brown eye alleles"
+        }
       ],
       "highlights": [
         "Fed the model shuffled and fake DNA across 4 control tests — predictions collapsed, proving it reads genetic sequence rather than memorizing known answers",
@@ -175,10 +281,18 @@
       "description": "Air Traffic Control radar simulation game. Vector arrivals to runways, sequence departures, and manage waypoints to keep the skies safe.",
       "github": "https://github.com/neilkpatel/1_3_26_atc_game",
       "demo": "https://1326atcgame.vercel.app",
-      "tags": ["TypeScript", "Canvas API", "Vite", "Game Dev"],
+      "tags": [
+        "TypeScript",
+        "Canvas API",
+        "Vite",
+        "Game Dev"
+      ],
       "icon": "✈️",
       "images": [
-        {"src": "/screenshots/atc_game.jpg", "caption": "Radar scope with arrivals, departures, and waypoints"}
+        {
+          "src": "/screenshots/atc_game.jpg",
+          "caption": "Radar scope with arrivals, departures, and waypoints"
+        }
       ],
       "highlights": [
         "Frame-rate-independent game loop — physics work the same at 30fps or 120fps",
@@ -193,10 +307,18 @@
       "description": "Real-time news aggregator tracking latest articles for Adobe, Coal Energy, and GLP-1s with smart ranking and auto-refresh.",
       "github": "https://github.com/neilkpatel/1-2-26-news-tracker",
       "demo": "https://1226newstracker.vercel.app",
-      "tags": ["React", "Vite", "Tailwind", "NewsAPI"],
+      "tags": [
+        "React",
+        "Vite",
+        "Tailwind",
+        "NewsAPI"
+      ],
       "icon": "📰",
       "images": [
-        {"src": "/screenshots/news_tracker.jpg", "caption": "Real-time article feed with smart ranking"}
+        {
+          "src": "/screenshots/news_tracker.jpg",
+          "caption": "Real-time article feed with smart ranking"
+        }
       ],
       "highlights": [
         "Custom ranking algorithm that weighs article freshness and source credibility",
@@ -211,10 +333,18 @@
       "description": "Real-time countdown to New Year's Day with year progress tracker and particle visualization system.",
       "github": "https://github.com/neilkpatel/1-1-26-nye-countdown",
       "demo": "https://1126nyecountdown.vercel.app",
-      "tags": ["React", "TypeScript", "Framer Motion", "Tailwind"],
+      "tags": [
+        "React",
+        "TypeScript",
+        "Framer Motion",
+        "Tailwind"
+      ],
       "icon": "🎆",
       "images": [
-        {"src": "/screenshots/nye_countdown.jpg", "caption": "Particle countdown with glass-blur effects"}
+        {
+          "src": "/screenshots/nye_countdown.jpg",
+          "caption": "Particle countdown with glass-blur effects"
+        }
       ],
       "highlights": [
         "Particle system where elements physically stack on top of each other",
@@ -229,10 +359,17 @@
       "description": "Live sports scores and game tracking across 17 leagues with intelligent ranking.",
       "github": "https://github.com/neilkpatel/12-31-25-sports-scores",
       "demo": "https://123125sportsscores.vercel.app",
-      "tags": ["React", "Vite", "Tailwind"],
+      "tags": [
+        "React",
+        "Vite",
+        "Tailwind"
+      ],
       "icon": "🏀",
       "images": [
-        {"src": "/screenshots/sports_scores.jpg", "caption": "Multi-league scores with intelligent ranking"}
+        {
+          "src": "/screenshots/sports_scores.jpg",
+          "caption": "Multi-league scores with intelligent ranking"
+        }
       ],
       "highlights": [
         "Fetches scores from 17 leagues simultaneously using parallel API calls",
@@ -247,10 +384,18 @@
       "description": "Real-time snow conditions dashboard with vintage split-flap display leaderboard and dynamic snowfall visualization.",
       "github": "https://github.com/neilkpatel/12_28_jackson_hole_snow_tracker",
       "demo": "https://1228jacksonholesnowtracker.vercel.app",
-      "tags": ["Vanilla JS", "Canvas API", "Web Scraping", "CSS3"],
+      "tags": [
+        "Vanilla JS",
+        "Canvas API",
+        "Web Scraping",
+        "CSS3"
+      ],
       "icon": "⛷️",
       "images": [
-        {"src": "/screenshots/snow_tracker.jpg", "caption": "Live snow conditions with split-flap display"}
+        {
+          "src": "/screenshots/snow_tracker.jpg",
+          "caption": "Live snow conditions with split-flap display"
+        }
       ],
       "highlights": [
         "Snowfall animation intensity scales with actual reported snow data",
@@ -264,49 +409,88 @@
     {
       "name": "Train a Shakespeare Transformer from Scratch",
       "description": "10.8M parameter transformer in raw PyTorch, trained on H100 via Modal",
-      "tags": ["PyTorch", "Transformers", "Modal"],
+      "tags": [
+        "PyTorch",
+        "Transformers",
+        "Modal"
+      ],
       "done": true
     },
     {
       "name": "FAA Bird Strikes: Predicting Aircraft Damage",
       "description": "316K wildlife strikes — EDA, 3 classifiers, overfitting diagnosis, cross-validation. Full DS pipeline from raw data to interactive dashboard.",
-      "tags": ["pandas", "scikit-learn", "XGBoost", "Chart.js"],
+      "tags": [
+        "pandas",
+        "scikit-learn",
+        "XGBoost",
+        "Chart.js"
+      ],
       "done": true
     },
     {
       "name": "Fine-Tune an Open-Source LLM",
       "description": "LoRA/QLoRA fine-tuning on Llama or Mistral with custom data",
-      "tags": ["LoRA", "Hugging Face", "PEFT"]
+      "tags": [
+        "LoRA",
+        "Hugging Face",
+        "PEFT"
+      ]
     },
     {
       "name": "Build Backpropagation from Scratch",
       "description": "Pure NumPy neural net — no autograd, every gradient written by hand",
-      "tags": ["NumPy", "Calculus", "Neural Nets"]
+      "tags": [
+        "NumPy",
+        "Calculus",
+        "Neural Nets"
+      ]
     },
     {
       "name": "Mechanistic Interpretability",
       "description": "Reverse-engineer what specific neurons and circuits learn inside a trained transformer",
-      "tags": ["Interpretability", "PyTorch", "Probing"]
+      "tags": [
+        "Interpretability",
+        "PyTorch",
+        "Probing"
+      ]
     },
     {
       "name": "RLHF / DPO Alignment",
       "description": "Train a small model to follow human preferences — the step that turns a predictor into an assistant",
-      "tags": ["RLHF", "DPO", "Reward Modeling"]
+      "tags": [
+        "RLHF",
+        "DPO",
+        "Reward Modeling"
+      ]
     },
     {
       "name": "Build a Diffusion Model from Scratch",
       "description": "Train a denoiser on images, visualize the full denoising process step by step",
-      "tags": ["Diffusion", "PyTorch", "Computer Vision"]
+      "tags": [
+        "Diffusion",
+        "PyTorch",
+        "Computer Vision"
+      ]
     },
     {
       "name": "NBA Player Value Analysis",
       "description": "Feature engineering on player stats and salary data to find the most over/underpaid players. EDA, regression, clustering, and visualization storytelling.",
-      "tags": ["pandas", "scikit-learn", "Regression", "Clustering"]
+      "tags": [
+        "pandas",
+        "scikit-learn",
+        "Regression",
+        "Clustering"
+      ]
     },
     {
       "name": "Flight Delay Prediction (BTS On-Time Data)",
       "description": "Millions of domestic flights — predict delays using carrier, route, time, and weather features. Full DS pipeline: cleaning, EDA, feature engineering, model comparison.",
-      "tags": ["pandas", "XGBoost", "Time Series", "Geospatial"]
+      "tags": [
+        "pandas",
+        "XGBoost",
+        "Time Series",
+        "Geospatial"
+      ]
     }
   ]
 }
