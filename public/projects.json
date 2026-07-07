@@ -140,6 +140,12 @@
       "name": "Baton",
       "date": "6/27/26",
       "description": "A macOS menu-bar command center for the AI agents you have in flight. Reads the signals Claude Code and Codex already emit — zero manual entry — and surfaces the one that matters: which agent finished its leg and is now waiting on you (\"the baton's with you\").",
+      "images": [
+        {
+          "src": "/screenshots/baton.png",
+          "caption": "Menu-bar view — every Claude Code + Codex session, sorted by who's waiting on you"
+        }
+      ],
       "tags": [
         "Python",
         "macOS",
