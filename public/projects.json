@@ -114,6 +114,29 @@
   ],
   "experimental": [
     {
+      "name": "Concert Radar",
+      "date": "7/7/26",
+      "description": "Turns my live Spotify taste into a personalized NYC concert radar. A Python pipeline fingerprints what I actually listen to — recent obsessions, heavy rotation, saved albums, playlists — then scores every upcoming show against it, with a discovery lane, venue-fit, and live price/urgency signals. A React site and a weekly email surface the ones worth buying.",
+      "demo": "https://concerts.neilkpatel.com",
+      "tags": [
+        "Python",
+        "Spotify API",
+        "Last.fm API",
+        "React",
+        "Ticketmaster API",
+        "Vercel"
+      ],
+      "icon": "🎧",
+      "highlights": [
+        "Builds a taste profile from 12 Spotify signals — recent plays, short/medium/long-term top artists and tracks, saved albums, followed artists, and playlists",
+        "Log-scaled affinity so your obsessions outrank casual likes — a fix for v1, which flattened everyone into a single tier",
+        "Three lanes: Your Artists, a Last.fm 'New To You' discovery lane (discounted so it never crowds out known loves), and 'Worth The Trip' destination shows",
+        "Ranks every show by taste + venue-fit + live Ticketmaster / SeatGeek price and urgency (selling-fast, from $X, in N days)",
+        "Tribute-band filtering and a tail gate so barely-known artists only match on exact lineups — kills fuzzy noise",
+        "Pure-stdlib Python (zero dependencies); auto-rebuilds daily and emails a weekly digest via launchd"
+      ]
+    },
+    {
       "name": "Baton",
       "date": "6/27/26",
       "description": "A macOS menu-bar command center for the AI agents you have in flight. Reads the signals Claude Code and Codex already emit — zero manual entry — and surfaces the one that matters: which agent finished its leg and is now waiting on you (\"the baton's with you\").",

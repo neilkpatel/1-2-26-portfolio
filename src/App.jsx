@@ -41,6 +41,17 @@ function App() {
   }, [])
 
 
+
+  // Merge both project groups into one timeline, newest first (any new
+  // project with a newer date auto-floats to the top).
+  const parseDate = (s) => {
+    const [m, d, y] = (s || '1/1/70').split('/').map(Number);
+    return new Date(2000 + y, m - 1, d).getTime();
+  };
+  const allProjects = [...productionProjects, ...experimentalProjects]
+    .sort((a, b) => parseDate(b.date) - parseDate(a.date));
+  const newestTwo = new Set(allProjects.slice(0, 2).map((p) => p.name));
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-gray-100">
       <Analytics />
@@ -228,7 +239,7 @@ function App() {
             {/* Stats Bar */}
             <div className="mb-12 grid grid-cols-3 md:grid-cols-6 gap-4">
               {[
-                { value: '10', label: 'Projects Built' },
+                { value: '16', label: 'Projects Built' },
                 { value: '4', label: 'In Production' },
                 { value: '100+', label: 'Active Users' },
                 { value: '3', label: 'Databases Designed' },
@@ -242,17 +253,19 @@ function App() {
               ))}
             </div>
 
-            {/* Production Projects */}
-            <div className="mb-12">
-              <p className="font-mono text-green-400 text-sm mb-2">$ ls ./production</p>
-              <h2 className="text-3xl font-bold text-white">Live Projects <span className="text-gray-500">— used by 100+ users</span></h2>
+            {/* Projects — unified timeline, newest first */}
+            <div className="mb-8">
+              <p className="font-mono text-green-400 text-sm mb-2">$ ls -t ./projects</p>
+              <h2 className="text-3xl font-bold text-white">Projects <span className="text-gray-500">— newest first</span></h2>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
-              {productionProjects.map((project, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {allProjects.map((project, index) => {
+                const isNew = newestTwo.has(project.name);
+                return (
                 <div
                   key={index}
-                  className={`group relative bg-[#111] rounded-lg overflow-hidden transition-all duration-300 ${
+                  className={`group relative bg-[#111] rounded-lg overflow-hidden transition-all duration-300 flex flex-col ${
                     project.featured
                       ? 'border-2 border-yellow-500/60 hover:border-yellow-400 shadow-lg shadow-yellow-500/10'
                       : 'border border-gray-800 hover:border-green-500/50'
@@ -264,22 +277,28 @@ function App() {
                   )}
                   {/* Terminal Header */}
                   <div className="relative bg-[#1a1a1a] border-b border-gray-800 px-4 py-2 flex items-center gap-2">
-                    <div className="flex gap-1.5">
+                    <div className="flex gap-1.5 shrink-0">
                       <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
                       <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                       <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                     </div>
-                    <span className="ml-2 text-xs font-mono text-gray-500">{project.demo.replace('https://', '')}</span>
-                    {project.featured ? (
-                      <span className="ml-auto px-2 py-0.5 bg-yellow-500/20 text-yellow-400 text-xs font-mono rounded border border-yellow-500/30">NEW</span>
-                    ) : (
-                      <span className="ml-auto px-2 py-0.5 bg-green-500/20 text-green-400 text-xs font-mono rounded">LIVE</span>
-                    )}
+                    <span className="ml-2 text-xs font-mono text-gray-500 truncate">{project.demo ? project.demo.replace('https://', '') : `local://${project.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`}</span>
+                    <div className="ml-auto flex items-center gap-1.5 shrink-0">
+                      {isNew ? (
+                        <span className="px-2 py-0.5 bg-green-500/20 text-green-400 text-xs font-mono rounded border border-green-500/30">NEW</span>
+                      ) : project.demo ? (
+                        <span className="px-2 py-0.5 bg-green-500/15 text-green-400/90 text-xs font-mono rounded">LIVE</span>
+                      ) : (project.report || project.notebook) ? (
+                        <span className="px-2 py-0.5 bg-cyan-500/15 text-cyan-400/90 text-xs font-mono rounded">RESEARCH</span>
+                      ) : (
+                        <span className="px-2 py-0.5 bg-gray-600/30 text-gray-400 text-xs font-mono rounded">PROJECT</span>
+                      )}
+                      <span className="px-2 py-0.5 bg-gray-700/50 text-gray-400 text-xs font-mono rounded">{project.date}</span>
+                    </div>
                   </div>
 
                   {/* Card Content */}
-                  <div className="relative p-5">
-                    {/* Project Name */}
+                  <div className="relative p-5 flex-1">
                     <h3 className={`text-xl font-bold mb-1 transition-colors ${
                       project.featured
                         ? 'text-yellow-400 group-hover:text-yellow-300'
@@ -289,108 +308,22 @@ function App() {
                     </h3>
                     <p className="text-gray-400 text-sm mb-4 leading-relaxed">{project.description}</p>
 
-                    {/* Screenshot */}
-                    {project.images && project.images.length > 0 && (
-                      <div className="mb-4">
-                        <a href={project.images[0].src} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded border border-gray-700 hover:border-green-500/50 transition-colors">
-                          <img src={project.images[0].src} alt={project.images[0].caption} title={project.images[0].caption} className="w-full aspect-video object-contain bg-black/50 cursor-pointer" />
-                        </a>
-                      </div>
-                    )}
-
-                    {/* Tech Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tags.map((tag, i) => (
-                        <span key={i} className="px-2 py-0.5 bg-green-500/10 text-green-400 text-xs font-mono rounded border border-green-500/20">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Highlights */}
-                    {project.highlights && project.highlights.length > 0 && (
-                      <div className="border-t border-gray-800 pt-3 mb-1 space-y-1.5">
-                        {project.highlights.map((h, i) => (
-                          <div key={i} className="text-cyan-400/80 text-xs flex items-start gap-2 font-mono">
-                            <span className="text-green-500 mt-px shrink-0">▸</span>
-                            <span>{h}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Links */}
-                  <div className="px-5 pb-4 flex gap-3">
-                    <button
-                      onClick={() => window.open(project.demo, '_blank')}
-                      className="flex-1 text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
-                    >
-                      visit_site()
-                    </button>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 border border-gray-700 text-gray-400 rounded font-mono text-sm hover:border-green-500 hover:text-green-400 transition-colors flex items-center gap-2"
-                    >
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                      </svg>
-                      repo
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Experimental Projects */}
-            <div className="mb-12">
-              <p className="font-mono text-green-400 text-sm mb-2">$ ls ./experiments</p>
-              <h2 className="text-3xl font-bold text-white">Experimental Projects <span className="text-gray-500">— technical explorations</span></h2>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {experimentalProjects.map((project, index) => (
-                <div
-                  key={index}
-                  className="group relative bg-[#111] rounded-lg border border-gray-800 overflow-hidden hover:border-green-500/50 transition-all duration-300 flex flex-col"
-                >
-                  {/* Terminal Header */}
-                  <div className="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2 flex items-center gap-2">
-                    <div className="flex gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-                    </div>
-                    <span className="ml-2 text-xs font-mono text-gray-500">{project.demo ? project.demo.replace('https://', '') : 'local://research'}</span>
-                    <span className="ml-auto px-2 py-0.5 bg-gray-700/50 text-gray-400 text-xs font-mono rounded">{project.date}</span>
-                  </div>
-
-                  {/* Card Content */}
-                  <div className="p-5 flex-1">
-                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-green-400 transition-colors">
-                      {project.name}
-                    </h3>
-                    <p className="text-gray-400 text-sm mb-4 leading-relaxed">{project.description}</p>
-
-                    {/* Image Gallery */}
+                    {/* Screenshot(s) — height-capped so cards stay compact */}
                     {project.images && project.images.length > 0 && (
                       <div className="mb-4">
                         {project.images.length === 1 ? (
                           <a href={project.images[0].src} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded border border-gray-700 hover:border-green-500/50 transition-colors">
-                            <img src={project.images[0].src} alt={project.images[0].caption} title={project.images[0].caption} className="w-full aspect-video object-contain bg-black/50 cursor-pointer" />
+                            <img src={project.images[0].src} alt={project.images[0].caption} title={project.images[0].caption} className="w-full h-44 object-contain bg-black/50 cursor-pointer" />
                           </a>
                         ) : (
                           <div className="grid grid-cols-2 gap-1.5">
                             {project.images.map((img, i) => (
                               <a key={i} href={img.src} target="_blank" rel="noopener noreferrer" className="overflow-hidden rounded border border-gray-700 hover:border-green-500/50 transition-colors">
-                                <img src={img.src} alt={img.caption} title={img.caption} className="w-full aspect-video object-contain bg-black/50 cursor-pointer" />
+                                <img src={img.src} alt={img.caption} title={img.caption} className="w-full h-28 object-contain bg-black/50 cursor-pointer" />
                               </a>
                             ))}
                           </div>
                         )}
-                        <p className="text-gray-500 text-xs font-mono mt-1.5">click to expand</p>
                       </div>
                     )}
 
@@ -417,55 +350,58 @@ function App() {
                   </div>
 
                   {/* Links */}
-                  <div className="px-5 pb-4 flex gap-3">
-                    {project.demo && (
-                      <button
-                        onClick={() => window.open(project.demo, '_blank')}
-                        className="flex-1 text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
-                      >
-                        try_it()
-                      </button>
-                    )}
-                    {project.report && (
-                      <button
-                        onClick={() => window.open(project.report, '_blank')}
-                        className="flex-1 text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
-                      >
-                        view_report()
-                      </button>
-                    )}
-                    {project.notebook && (
-                      <button
-                        onClick={() => window.open(project.notebook, '_blank')}
-                        className="flex-1 text-center px-4 py-2 bg-gray-700 text-gray-200 rounded font-mono text-sm font-medium hover:bg-gray-600 transition-colors cursor-pointer border border-gray-600"
-                      >
-                        view_models()
-                      </button>
-                    )}
-                    {project.images && !project.demo && !project.report && (
-                      <button
-                        onClick={() => window.open(project.images[0].src, '_blank')}
-                        className="flex-1 text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
-                      >
-                        view_results()
-                      </button>
-                    )}
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 py-2 border border-gray-700 text-gray-400 rounded font-mono text-sm hover:border-green-500 hover:text-green-400 transition-colors flex items-center gap-2"
-                      >
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                          <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                        </svg>
-                        repo
-                      </a>
-                    )}
-                  </div>
+                  {(project.demo || project.report || project.notebook || project.github || project.images) && (
+                    <div className="px-5 pb-4 flex flex-wrap gap-3">
+                      {project.demo && (
+                        <button
+                          onClick={() => window.open(project.demo, '_blank')}
+                          className="flex-1 min-w-[8rem] text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
+                        >
+                          visit_site()
+                        </button>
+                      )}
+                      {project.report && (
+                        <button
+                          onClick={() => window.open(project.report, '_blank')}
+                          className="flex-1 min-w-[8rem] text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
+                        >
+                          view_report()
+                        </button>
+                      )}
+                      {project.notebook && (
+                        <button
+                          onClick={() => window.open(project.notebook, '_blank')}
+                          className="flex-1 min-w-[8rem] text-center px-4 py-2 bg-gray-700 text-gray-200 rounded font-mono text-sm font-medium hover:bg-gray-600 transition-colors cursor-pointer border border-gray-600"
+                        >
+                          view_models()
+                        </button>
+                      )}
+                      {project.images && !project.demo && !project.report && (
+                        <button
+                          onClick={() => window.open(project.images[0].src, '_blank')}
+                          className="flex-1 min-w-[8rem] text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
+                        >
+                          view_results()
+                        </button>
+                      )}
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-4 py-2 border border-gray-700 text-gray-400 rounded font-mono text-sm hover:border-green-500 hover:text-green-400 transition-colors flex items-center gap-2"
+                        >
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                          </svg>
+                          repo
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

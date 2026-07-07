@@ -51,9 +51,12 @@ Professional portfolio website showcasing Neil's projects and skills.
 
 ## Sections
 1. **Hero** — Name, title ("Marketing Scientist / Agentic Engineer"), headshot (grayscale→color on hover), GitHub/LinkedIn links
-2. **Projects** — Two categories: Live (terminal-style cards) and Experimental (mini terminal cards)
+2. **Projects** — ONE unified grid, terminal-style cards, **sorted newest-first by `date`** (production + experimental merged in `App.jsx` via `allProjects`). Each card shows a date pill + a status badge (LIVE = has `demo` / RESEARCH = has `report`/`notebook` / PROJECT = otherwise); the two most recent get a green `NEW` badge. 2 columns from 640px (`sm:grid-cols-2`), 1 column on phones. Screenshots are height-capped (`h-44`, or `h-28` for multi-image) so cards stay compact.
 3. **Contact** — GitHub and LinkedIn links only (no email)
 4. **Footer** — Build timestamp, copyright
+
+### Adding a project (newest-first is automatic)
+Add an object to `production` or `experimental` in `public/projects.json` (the two arrays are merged + date-sorted, so the array/section no longer affects order — only `date` does). Set `date` as `"M/D/YY"` — a newer date auto-floats it to the top. Optional fields drive the card: `demo` → `visit_site()` + LIVE badge; `report` → `view_report()`; `notebook` → `view_models()`; `github` → `repo`; `images` (array of `{src,caption}`, screenshots in `public/screenshots/`) → thumbnail + `view_results()` if no demo/report. Then `npm run build` + push (Vercel auto-deploys from `main`).
 
 ---
 
