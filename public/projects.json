@@ -113,6 +113,36 @@
   ],
   "experimental": [
     {
+      "name": "Research Intelligence Engine",
+      "date": "6/29/26",
+      "description": "A self-built agentic research stack that reads financial disclosure at scale and surfaces narrative shifts before they become consensus. Multi-agent pipelines, not a chatbot — designed as always-on research infrastructure. (Proprietary signals redacted.)",
+      "images": [
+        {
+          "src": "/screenshots/research_engine.png",
+          "caption": "System architecture — sources → NLP + agentic pipelines → outputs (signals redacted)"
+        }
+      ],
+      "tags": [
+        "Python",
+        "Claude API",
+        "Anthropic SDK",
+        "NLP",
+        "FMP API",
+        "SEC EDGAR",
+        "Multi-Agent",
+        "launchd"
+      ],
+      "icon": "🛰️",
+      "highlights": [
+        "Transcript Radar — an NLP engine that diffs language across thousands of earnings calls, investor days, and conferences to flag tone and wording shifts before they hit the tape",
+        "Agentic operating loop — multi-step Claude orchestration that scans sources, scores, and writes memos on a schedule; a pipeline, not a prompt",
+        "LLM map-reduce — cheaper models fan out to read and extract, a stronger model synthesizes; cost-tuned for large document volumes",
+        "Multi-source data layer — FMP fundamentals, SEC filings, transcripts, and newsletters normalized into one queryable store",
+        "Runs unattended — headless-Claude cron jobs (launchd) rebuild screens and email digests with zero manual runs",
+        "Re-runnable, tested, pure-Python — built as research infrastructure, not one-off scripts"
+      ]
+    },
+    {
       "name": "Concert Radar",
       "date": "7/7/26",
       "description": "Turns my live Spotify taste into a personalized NYC concert radar. A Python pipeline fingerprints what I actually listen to — recent obsessions, heavy rotation, saved albums, playlists — then scores every upcoming show against it, with a discovery lane, venue-fit, and live price/urgency signals. A React site and a weekly email surface the ones worth buying.",
