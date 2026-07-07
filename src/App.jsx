@@ -240,11 +240,11 @@ function App() {
             <div className="mb-12 grid grid-cols-3 md:grid-cols-6 gap-4">
               {[
                 { value: '16', label: 'Projects Built' },
-                { value: '4', label: 'In Production' },
-                { value: '100+', label: 'Active Users' },
+                { value: '11', label: 'Live Sites' },
+                { value: '300+', label: 'Active Users' },
                 { value: '3', label: 'Databases Designed' },
                 { value: '44+', label: 'Tests Written' },
-                { value: '6', label: 'APIs Integrated' },
+                { value: '12+', label: 'APIs Integrated' },
               ].map((stat, i) => (
                 <div key={i} className="bg-[#111] border border-gray-800 rounded-lg p-4 text-center">
                   <div className="text-2xl font-bold text-green-400 font-mono">{stat.value}</div>
