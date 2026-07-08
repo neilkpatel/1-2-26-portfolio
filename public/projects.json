@@ -115,11 +115,11 @@
     {
       "name": "Research Intelligence Engine",
       "date": "6/29/26",
-      "description": "A self-built agentic research stack that reads financial disclosure at scale and surfaces narrative shifts before they become consensus. Multi-agent pipelines, not a chatbot — designed as always-on research infrastructure. (Proprietary signals redacted.)",
+      "description": "A self-built agentic research stack that reads financial disclosure — and the chatter around it — at scale: transcripts (incl. YouTube), SEC filings, fundamentals, and retail sentiment from Seeking Alpha, Reddit & X. Surfaces earnings-theme pulses, 52-week deep dives, and inflection setups before consensus. (Proprietary picks redacted.)",
       "images": [
         {
-          "src": "/screenshots/research_engine.png",
-          "caption": "System architecture — sources → NLP + agentic pipelines → outputs (signals redacted)"
+          "src": "/screenshots/research_engine_lanes.png",
+          "caption": "System architecture — social + disclosure sources → four analysis lanes → outputs (signals redacted)"
         }
       ],
       "tags": [
@@ -127,6 +127,7 @@
         "Claude API",
         "Anthropic SDK",
         "NLP",
+        "Web Scraping",
         "FMP API",
         "SEC EDGAR",
         "Multi-Agent",
@@ -134,12 +135,12 @@
       ],
       "icon": "🛰️",
       "highlights": [
-        "Transcript Radar — an NLP engine that diffs language across thousands of earnings calls, investor days, and conferences to flag tone and wording shifts before they hit the tape",
-        "Agentic operating loop — multi-step Claude orchestration that scans sources, scores, and writes memos on a schedule; a pipeline, not a prompt",
-        "LLM map-reduce — cheaper models fan out to read and extract, a stronger model synthesizes; cost-tuned for large document volumes",
-        "Multi-source data layer — FMP fundamentals, SEC filings, transcripts, and newsletters normalized into one queryable store",
-        "Runs unattended — headless-Claude cron jobs (launchd) rebuild screens and email digests with zero manual runs",
-        "Re-runnable, tested, pure-Python — built as research infrastructure, not one-off scripts"
+        "Transcript Radar — NLP that diffs language across thousands of earnings calls (incl. YouTube-sourced transcripts) to flag narrative shifts before consensus",
+        "Earnings Pulse — a weekly digest that synthesizes the dominant themes across the week's earnings calls",
+        "52-week deep dives + inflection screens — forensic breakdowns of 52-week highs/lows and screens that surface fundamentals quietly turning (backtested)",
+        "Alt-data + retail sentiment — pulls YouTube transcripts and scrapes Seeking Alpha, Reddit, and X comments alongside SEC filings and FMP fundamentals",
+        "Agentic pipelines + LLM map-reduce — multi-step Claude orchestration; cheap models fan out to read, a stronger model synthesizes, cost-tuned for volume",
+        "Runs unattended — headless-Claude cron (launchd) rebuilds every screen and emails digests daily; re-runnable, tested, pure-Python"
       ]
     },
     {
