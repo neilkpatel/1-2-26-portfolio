@@ -148,6 +148,12 @@
       "date": "7/7/26",
       "description": "Turns my live Spotify taste into a personalized NYC concert radar. A Python pipeline fingerprints what I actually listen to — recent obsessions, heavy rotation, saved albums, playlists — then scores every upcoming show against it, with a discovery lane, venue-fit, and live price/urgency signals. A React site and a weekly email surface the ones worth buying.",
       "demo": "https://concerts.neilkpatel.com",
+      "images": [
+        {
+          "src": "/screenshots/concert_radar.png",
+          "caption": "This Week's Top Picks — every upcoming NYC show scored against your Spotify taste"
+        }
+      ],
       "tags": [
         "Python",
         "Spotify API",
