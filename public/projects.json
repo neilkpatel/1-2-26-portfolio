@@ -3,7 +3,7 @@
     {
       "name": "Kitchen Sink",
       "date": "2/20/26",
-      "description": "Snap a photo of your fridge and get instant recipe ideas. AI identifies your ingredients, rates your fridge out of 10, and roasts your food choices — then suggests what to cook.",
+      "description": "Snap a photo of your fridge and get instant recipe ideas. AI identifies your ingredients, rates your fridge out of 10, roasts your food choices, and suggests what to cook.",
       "github": "https://github.com/neilkpatel/2_20_26_kitchen-sink",
       "demo": "https://22026kitchen-sink.vercel.app",
       "tags": [
@@ -22,7 +22,7 @@
       ],
       "highlights": [
         "Claude vision API identifies ingredients from a single fridge photo",
-        "AI rates your fridge 1-10 on variety, nutrition, and cooking potential",
+        "AI rates your fridge 1 to 10 on variety, nutrition, and cooking potential",
         "Roast Mode for a savage (but playful) critique of your fridge contents",
         "Editable ingredient list with on-the-fly recipe regeneration",
         "Server-side API proxy keeps keys secure with client-side image compression"
@@ -54,7 +54,7 @@
         "Geographic database queries to calculate distances and parse location data",
         "Calculates the geographic center point between all active users",
         "Server-side push notifications with encrypted signing keys",
-        "Database-level access control — users only see their own squad's data"
+        "Database-level access control, so users only see their own squad's data"
       ]
     },
     {
@@ -115,11 +115,11 @@
     {
       "name": "Research Intelligence Engine",
       "date": "6/29/26",
-      "description": "A self-built agentic research stack that reads financial disclosure — and the chatter around it — at scale: transcripts (incl. YouTube), SEC filings, fundamentals, and retail sentiment from Seeking Alpha, Reddit & X. Surfaces earnings-theme pulses, 52-week deep dives, and inflection setups before consensus. (Proprietary picks redacted.)",
+      "description": "A self-built agentic research stack that reads financial disclosure at scale, along with the chatter around it. It pulls transcripts (including YouTube), SEC filings, fundamentals, and retail sentiment from Seeking Alpha, Reddit, and X, then flags earnings-theme pulses, 52-week deep dives, and inflection setups early. (Proprietary picks redacted.)",
       "images": [
         {
           "src": "/screenshots/research_engine_lanes.png",
-          "caption": "System architecture — social + disclosure sources → four analysis lanes → outputs (signals redacted)"
+          "caption": "System architecture: social and disclosure sources feed four analysis lanes and their outputs (signals redacted)"
         }
       ],
       "tags": [
@@ -135,23 +135,23 @@
       ],
       "icon": "🛰️",
       "highlights": [
-        "Transcript Radar — NLP that diffs language across thousands of earnings calls (incl. YouTube-sourced transcripts) to flag narrative shifts before consensus",
-        "Earnings Pulse — a weekly digest that synthesizes the dominant themes across the week's earnings calls",
-        "52-week deep dives + inflection screens — forensic breakdowns of 52-week highs/lows and screens that surface fundamentals quietly turning (backtested)",
-        "Alt-data + retail sentiment — pulls YouTube transcripts and scrapes Seeking Alpha, Reddit, and X comments alongside SEC filings and FMP fundamentals",
-        "Agentic pipelines + LLM map-reduce — multi-step Claude orchestration; cheap models fan out to read, a stronger model synthesizes, cost-tuned for volume",
-        "Runs unattended — headless-Claude cron (launchd) rebuilds every screen and emails digests daily; re-runnable, tested, pure-Python"
+        "Transcript Radar: NLP that compares language across thousands of earnings calls (including transcripts sourced from YouTube) to catch narrative shifts before the market does",
+        "Earnings Pulse: a weekly digest that pulls together the main themes from the week's earnings calls",
+        "52-week deep dives and inflection screens: detailed breakdowns of 52-week highs and lows, plus screens that catch fundamentals quietly turning (backtested)",
+        "Alt-data and retail sentiment: pulls YouTube transcripts and scrapes Seeking Alpha, Reddit, and X comments alongside SEC filings and FMP fundamentals",
+        "Agentic pipelines with LLM map-reduce: multi-step Claude orchestration where cheap models fan out to read and a stronger model synthesizes, tuned to keep costs down at volume",
+        "Runs unattended: a headless Claude cron job (launchd) rebuilds every screen and emails digests daily. Re-runnable, tested, and pure Python"
       ]
     },
     {
       "name": "Concert Radar",
       "date": "7/7/26",
-      "description": "Turns my live Spotify taste into a personalized NYC concert radar. A Python pipeline fingerprints what I actually listen to — recent obsessions, heavy rotation, saved albums, playlists — then scores every upcoming show against it, with a discovery lane, venue-fit, and live price/urgency signals. A React site and a weekly email surface the ones worth buying.",
+      "description": "Turns my Spotify listening into a personalized NYC concert radar. A Python pipeline reads what I actually play (recent tracks, heavy rotation, saved albums, playlists) and scores every upcoming show against it, then layers in a discovery lane, venue fit, and live price signals. A React site and a weekly email tell me which shows are worth catching.",
       "demo": "https://concerts.neilkpatel.com",
       "images": [
         {
           "src": "/screenshots/concert_radar.png",
-          "caption": "This Week's Top Picks — every upcoming NYC show scored against your Spotify taste"
+          "caption": "This Week's Top Picks: every upcoming NYC show scored against your Spotify taste"
         }
       ],
       "tags": [
@@ -164,22 +164,22 @@
       ],
       "icon": "🎧",
       "highlights": [
-        "Builds a taste profile from 12 Spotify signals — recent plays, short/medium/long-term top artists and tracks, saved albums, followed artists, and playlists",
-        "Log-scaled affinity so your obsessions outrank casual likes — a fix for v1, which flattened everyone into a single tier",
-        "Three lanes: Your Artists, a Last.fm 'New To You' discovery lane (discounted so it never crowds out known loves), and 'Worth The Trip' destination shows",
-        "Ranks every show by taste + venue-fit + live Ticketmaster / SeatGeek price and urgency (selling-fast, from $X, in N days)",
-        "Tribute-band filtering and a tail gate so barely-known artists only match on exact lineups — kills fuzzy noise",
-        "Pure-stdlib Python (zero dependencies); auto-rebuilds daily and emails a weekly digest via launchd"
+        "Builds a taste profile from 12 Spotify signals: recent plays, top artists and tracks across short, medium, and long-term windows, saved albums, followed artists, and playlists",
+        "Log-scaled affinity so favorites outrank casual likes, which fixed v1's habit of flattening everyone into one tier",
+        "Three lanes: your artists, a Last.fm 'New To You' discovery lane (weighted down so it never crowds out artists you already love), and 'Worth The Trip' destination shows",
+        "Ranks every show by taste, venue fit, and live Ticketmaster and SeatGeek price and urgency (selling fast, from $X, in N days)",
+        "Filters out tribute bands and makes obscure artists match only on exact lineups, so fuzzy noise never sneaks in",
+        "Pure standard-library Python with zero dependencies. Rebuilds daily and emails a weekly digest via launchd"
       ]
     },
     {
       "name": "Baton",
       "date": "6/27/26",
-      "description": "A macOS menu-bar command center for the AI agents you have in flight. Reads the signals Claude Code and Codex already emit — zero manual entry — and surfaces the one that matters: which agent finished its leg and is now waiting on you (\"the baton's with you\").",
+      "description": "A macOS menu-bar command center for the AI agents you have running. It reads the signals Claude Code and Codex already emit, so there's nothing to enter by hand, and shows you the one that matters: whichever agent finished its leg and is now waiting on you (\"the baton's with you\").",
       "images": [
         {
           "src": "/screenshots/baton.png",
-          "caption": "Menu-bar view — every Claude Code + Codex session, sorted by who's waiting on you"
+          "caption": "Menu-bar view: every Claude Code and Codex session, sorted by who's waiting on you"
         }
       ],
       "tags": [
@@ -193,17 +193,17 @@
       ],
       "icon": "🎽",
       "highlights": [
-        "Event-driven detection via macOS FSEvents — catches an agent hand-off in under a second while idling with zero polling in between (faster AND lighter on battery)",
-        "Unifies two separate agent tools behind one normalized \"track\" contract, so adding a signal source never touches the UI",
-        "Reads each tool's true waiting signal: Claude Code's live session status, and Codex's own unread (blue-dot) state parsed from its Electron store",
-        "Click a session to jump straight to it — raises the exact Terminal.app tab by tty, or opens the Codex thread via its reverse-engineered codex:// deep link",
-        "Stdlib-only Python with an isolated venv; auto-starts at login via a launchd agent; binds to 127.0.0.1 and reads local state only"
+        "Event-driven detection via macOS FSEvents catches an agent hand-off in under a second, with no polling in between, so it stays fast and easy on the battery",
+        "Unifies two separate agent tools behind one normalized \"track\" format, so adding a new source never touches the UI",
+        "Reads each tool's real waiting signal: Claude Code's live session status and Codex's own unread (blue-dot) state, parsed from its Electron store",
+        "Click a session to jump straight to it: it raises the exact Terminal.app tab by tty, or opens the Codex thread through its reverse-engineered codex:// link",
+        "Standard-library Python in an isolated venv. Auto-starts at login via a launchd agent, binds to 127.0.0.1, and reads local state only"
       ]
     },
     {
       "name": "World Cup 2026 Dashboard",
       "date": "6/10/26",
-      "description": "Live dashboard for the 2026 World Cup — scores, group standings, the Golden Boot race, a knockout bracket, and AI-written match recaps. Pulls everything live from ESPN's public API with no backend.",
+      "description": "Live dashboard for the 2026 World Cup: scores, group standings, the Golden Boot race, a knockout bracket, and AI-written match recaps. Everything comes live from ESPN's public API, with no backend.",
       "demo": "https://worldcup.neilkpatel.com",
       "tags": [
         "React",
@@ -220,11 +220,11 @@
         }
       ],
       "highlights": [
-        "Real traction — 640+ views from 300+ unique devices in its first weeks live (as of Jul 2026)",
-        "Live scores, 12-group standings, and the Golden Boot race — all parsed client-side from ESPN's public API (no backend, no keys)",
+        "Real traction: 640+ views from 300+ unique devices in its first weeks live (as of Jul 2026)",
+        "Live scores, 12-group standings, and the Golden Boot race, all parsed in the browser from ESPN's public API (no backend, no keys)",
         "Qualification-aware: a best-third-place race and a knockout bracket that fills in as teams advance",
         "AI-written match recaps via Claude, with ESPN's own report as a no-key fallback",
-        "Auto-refreshes every 60s; mobile-first, verified zero horizontal overflow down to 390px"
+        "Auto-refreshes every 60 seconds. Mobile-first, with zero horizontal overflow down to 390px"
       ]
     },
     {
@@ -250,7 +250,7 @@
       "highlights": [
         "9-tool agent loop using Anthropic's tool_runner with up to 15 autonomous iterations per run",
         "Multi-source retrieval: NewsAPI, HackerNews Algolia, and Luma Events API",
-        "Stateful JSON memory — tracks items across runs and learns from user feedback",
+        "Stateful JSON memory that tracks items across runs and learns from user feedback",
         "Generates styled HTML email briefs delivered automatically via Gmail CLI",
         "3 modes: automated daily brief, interactive chat, and feedback loop for preference tuning",
         "Scheduled via launchd for fully hands-off daily execution"
@@ -278,16 +278,16 @@
         }
       ],
       "highlights": [
-        "Models revealed animal size (58%), aircraft mass (11%), and altitude (8%) as the top 3 damage drivers — lighter GA planes hitting large birds are 10x more vulnerable than commercial jets",
-        "Pilot warnings barely reduce damage — warned vs. unwarned strike outcomes are nearly identical, suggesting strikes happen too fast to mitigate",
-        "Strikes hit record highs but severe damage rate fell 88% (1.75% → 0.21%) — post-2009 engine certifications and wildlife programs are quietly winning",
-        "Caught a 20% overfitting gap in Random Forest — 3 hyperparameter constraints turned the worst model (77.5% AUC) into the best (87.8% AUC)"
+        "Models revealed animal size (58%), aircraft mass (11%), and altitude (8%) as the top 3 damage drivers. Lighter GA planes hitting large birds are 10x more vulnerable than commercial jets",
+        "Pilot warnings barely reduce damage. Warned and unwarned strikes end up nearly identical, which suggests they happen too fast to do anything about",
+        "Strikes hit record highs but the severe-damage rate fell 88% (1.75% to 0.21%), a sign that post-2009 engine certifications and wildlife programs are quietly working",
+        "Caught a 20% overfitting gap in Random Forest. Three hyperparameter constraints turned the worst model (77.5% AUC) into the best (87.8% AUC)"
       ]
     },
     {
       "name": "Shakespeare Transformer: Training from Scratch",
       "date": "2/21/26",
-      "description": "Built a 10.8M parameter transformer from raw PyTorch — same architecture as GPT/Claude. Trained on Shakespeare using an H100 GPU, generating 7 visualizations that reveal how the model learns language.",
+      "description": "Built a 10.8M parameter transformer from raw PyTorch, the same architecture as GPT and Claude. Trained it on Shakespeare using an H100 GPU, with 7 visualizations that show how the model learns language.",
       "tags": [
         "PyTorch",
         "Transformers",
@@ -309,7 +309,7 @@
       "highlights": [
         "Loss dropped from 4.3 (random guessing) to 1.07 in 5,000 training steps on an H100 GPU",
         "Attention heads self-organized: early layers learn spelling, deep layers learn grammar",
-        "Model predicts 'wherefore art thou R→o' with 98.8% confidence — learned Shakespeare's patterns",
+        "Model predicts 'wherefore art thou R→o' with 98.8% confidence, having learned Shakespeare's patterns",
         "Embedding space reveals the model discovered letter categories (vowels, consonants, punctuation) on its own"
       ]
     },
@@ -335,9 +335,9 @@
         }
       ],
       "highlights": [
-        "Fed the model shuffled and fake DNA across 4 control tests — predictions collapsed, proving it reads genetic sequence rather than memorizing known answers",
-        "Ran RNA-seq predictions across a 1MB DNA window comparing blue vs brown alleles — OCA2 lit up as the top affected gene, matching decades of lab research",
-        "Compared the mutation's effect across different cell types — signal only fires in melanocytes (pigment cells), confirming it targets the right tissue",
+        "Fed the model shuffled and fake DNA across 4 control tests, and predictions collapsed, proving it reads genetic sequence rather than memorizing known answers",
+        "Ran RNA-seq predictions across a 1MB DNA window comparing blue vs brown alleles. OCA2 lit up as the top affected gene, matching decades of lab research",
+        "Compared the mutation's effect across different cell types. The signal only fires in melanocytes (pigment cells), confirming it targets the right tissue",
         "Histone mark predictions show the brown-eye allele has a 16x stronger enhancer signal, meaning its 'on switch' for pigment production is far more active"
       ]
     },
@@ -361,7 +361,7 @@
         }
       ],
       "highlights": [
-        "Frame-rate-independent game loop — physics work the same at 30fps or 120fps",
+        "Frame-rate-independent game loop, so physics work the same at 30fps or 120fps",
         "Aircraft with 6 flight states and realistic turn/climb behavior",
         "Enforces real ATC separation rules in both horizontal and vertical dimensions",
         "Animated radar sweep rendered with Canvas gradients"
@@ -484,7 +484,7 @@
     },
     {
       "name": "FAA Bird Strikes: Predicting Aircraft Damage",
-      "description": "316K wildlife strikes — EDA, 3 classifiers, overfitting diagnosis, cross-validation. Full DS pipeline from raw data to interactive dashboard.",
+      "description": "316K wildlife strikes: EDA, 3 classifiers, overfitting diagnosis, and cross-validation. A full DS pipeline from raw data to interactive dashboard.",
       "tags": [
         "pandas",
         "scikit-learn",
@@ -504,7 +504,7 @@
     },
     {
       "name": "Build Backpropagation from Scratch",
-      "description": "Pure NumPy neural net — no autograd, every gradient written by hand",
+      "description": "Pure NumPy neural net with no autograd, every gradient written by hand",
       "tags": [
         "NumPy",
         "Calculus",
@@ -522,7 +522,7 @@
     },
     {
       "name": "RLHF / DPO Alignment",
-      "description": "Train a small model to follow human preferences — the step that turns a predictor into an assistant",
+      "description": "Train a small model to follow human preferences, the step that turns a predictor into an assistant",
       "tags": [
         "RLHF",
         "DPO",
@@ -550,7 +550,7 @@
     },
     {
       "name": "Flight Delay Prediction (BTS On-Time Data)",
-      "description": "Millions of domestic flights — predict delays using carrier, route, time, and weather features. Full DS pipeline: cleaning, EDA, feature engineering, model comparison.",
+      "description": "Millions of domestic flights. Predict delays using carrier, route, time, and weather features. Full DS pipeline: cleaning, EDA, feature engineering, model comparison.",
       "tags": [
         "pandas",
         "XGBoost",
