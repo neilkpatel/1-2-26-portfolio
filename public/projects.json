@@ -370,32 +370,6 @@
       ]
     },
     {
-      "name": "News Tracker",
-      "date": "1/2/26",
-      "description": "Real-time news aggregator tracking latest articles for Adobe, Coal Energy, and GLP-1s with smart ranking and auto-refresh.",
-      "github": "https://github.com/neilkpatel/1-2-26-news-tracker",
-      "demo": "https://1226newstracker.vercel.app",
-      "tags": [
-        "React",
-        "Vite",
-        "Tailwind",
-        "NewsAPI"
-      ],
-      "icon": "📰",
-      "images": [
-        {
-          "src": "/screenshots/news_tracker.jpg",
-          "caption": "Real-time article feed with smart ranking"
-        }
-      ],
-      "highlights": [
-        "Custom ranking algorithm that weighs article freshness and source credibility",
-        "Server-side proxy to keep API keys secure and bypass browser restrictions",
-        "Boolean search queries (AND/OR) for precise topic matching",
-        "15-minute auto-refresh with proper memory cleanup on unmount"
-      ]
-    },
-    {
       "name": "New Year's Countdown 2027",
       "date": "1/1/26",
       "description": "Real-time countdown to New Year's Day with year progress tracker and particle visualization system.",
