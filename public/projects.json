@@ -3,13 +3,14 @@
   {
    "name": "What Agents Buy",
    "date": "8/4/26",
-   "description": "An independent review site for the APIs that AI agents pay for. It buys from x402 endpoints with a real wallet and publishes the receipt: what was quoted, what was actually charged, and whether the goods arrived. Alongside that it sweeps every USDC payment agents make on Base straight off the chain. Nobody pays to appear or to be graded.",
+   "description": "An independent review site for the APIs that AI agents pay for. It buys from x402 endpoints with a real wallet, catching the HTTP 402, signing an EIP-3009 USDC authorization and settling on-chain, then publishes the receipt: what was quoted, what was actually charged, and whether the goods arrived. Alongside that it sweeps every USDC payment agents make on Base straight off the chain. Nobody pays to appear or to be graded.",
    "demo": "https://whatagentsbuy.com",
    "github": "https://github.com/neilkpatel/whatagentsbuy",
    "tags": [
     "x402",
     "Agentic Payments",
     "MCP",
+    "EIP-3009",
     "Python",
     "Base",
     "USDC",
@@ -24,10 +25,10 @@
    ],
    "highlights": [
     "25 grades across 22 services, each earned by actually paying the endpoint and reconciling it on-chain",
+    "Pays for itself: buyer agent catches the 402, signs an EIP-3009 authorization and settles in USDC, no gas needed",
     "Preflight: a one-call CLEAR / HOLD / ABORT verdict an agent checks before paying an unfamiliar API",
     "Published to the official MCP Registry; 9 tools and 3,836 agent tool calls served to date",
-    "Audited its own settlement tape against the chain and found it 4.2x low, then published the correction and the method",
-    "Dispute receipts: every paid call is content-hashed and re-verifiable offline, without republishing the goods"
+    "Audited its own settlement tape against the chain and found it 4.2x low, then published the correction and the method"
    ]
   },
   {
@@ -169,50 +170,6 @@
   }
  ],
  "experimental": [
-  {
-   "name": "AgentCash · x402 Payment Lab",
-   "date": "7/13/26",
-   "description": "A working agentic-payment loop: a buyer agent hits a paywalled API, catches the HTTP 402, signs an EIP-3009 USDC authorization, retries, and prints the settlement transaction. Built to understand agent payments by running them end to end rather than reading about them.",
-   "github": "https://github.com/neilkpatel",
-   "demo": "https://agentpays.neilkpatel.com",
-   "tags": [
-    "x402",
-    "EIP-3009",
-    "USDC",
-    "Node",
-    "Base",
-    "Agents"
-   ],
-   "icon": "🤖",
-   "highlights": [
-    "First settlement confirmed on-chain; buyer needs no gas, the facilitator submits and the signature carries the payment",
-    "Seller and buyer both built on the x402 v2 scoped packages, challenge in the header rather than the body",
-    "Became the hands-on basis for the measurement work in What Agents Buy"
-   ]
-  },
-  {
-   "name": "Using Claude for Investing Research",
-   "date": "7/16/26",
-   "description": "A field guide to doing real research with an AI assistant: what it is genuinely good at, where it quietly fails, and the verification habits that make the difference. Written from the pipelines behind it rather than from theory.",
-   "demo": "https://claude-investing.neilkpatel.com",
-   "tags": [
-    "Claude API",
-    "Agents",
-    "Research",
-    "LLM Evals"
-   ],
-   "icon": "📘",
-   "images": [
-    {
-     "src": "/screenshots/claude_investing.png",
-     "caption": "A field guide to AI-assisted research"
-    }
-   ],
-   "highlights": [
-    "Written from working pipelines: transcript sweeps, filing readers and multi-source agent runs",
-    "Focuses on the failure modes, because a confident wrong answer costs more than a slow right one"
-   ]
-  },
   {
    "name": "Uniswap: The Burn Machine, Measured",
    "date": "8/14/26",
