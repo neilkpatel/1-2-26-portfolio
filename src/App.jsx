@@ -185,8 +185,9 @@ function App() {
                 </p>
                 <p className="text-lg text-gray-500 leading-relaxed max-w-xl">
                   I build agentic systems and measure the ones other people ship.
-                  Previously Marketing Science Partner at Meta, where I was the AI
-                  lead for a 200-person org and a $600M client book.
+                  Ten years turning technical work into decisions executives act on,
+                  across advertising measurement, pricing strategy and capital
+                  allocation.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
                   <button
