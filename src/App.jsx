@@ -239,8 +239,11 @@ function App() {
             {/* Stats Bar */}
             <div className="mb-12 grid grid-cols-3 md:grid-cols-6 gap-4">
               {[
-                { value: '16', label: 'Projects Built' },
-                { value: '11', label: 'Live Sites' },
+                // Derived from projects.json, not typed in. These read 16 and 11 while
+                // the file held 23 and 17: a hardcoded count is wrong the moment a
+                // project is added, and it is the first number a visitor checks.
+                { value: String(allProjects.length), label: 'Projects Built' },
+                { value: String(allProjects.filter(p => p.demo).length), label: 'Live Sites' },
                 { value: '300+', label: 'Active Users' },
                 { value: '3', label: 'Databases Designed' },
                 { value: '44+', label: 'Tests Written' },
