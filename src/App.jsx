@@ -173,14 +173,20 @@ function App() {
                 <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-white">
                   Neil Patel
                 </h1>
+                {/* "Marketing Scientist" was the Meta job title, and that job ended
+                    2026-08-20. It also pointed at the wrong work: the strongest things
+                    on this page are an independent measurement site and a live protocol
+                    dashboard, neither of which is marketing. Strategist over engineer is
+                    deliberate too, since the target seats are operator roles. */}
                 <p className="text-xl font-mono">
-                  <span className="text-cyan-400">Marketing Scientist</span>
+                  <span className="text-cyan-400">Technical Strategist</span>
                   <span className="text-gray-500"> / </span>
-                  <span className="text-purple-400">Agentic Engineer</span>
+                  <span className="text-purple-400">Agentic Systems</span>
                 </p>
                 <p className="text-lg text-gray-500 leading-relaxed max-w-xl">
-                  I build agentic systems and data-driven marketing solutions.
-                  Passionate about leveraging AI to create impactful applications.
+                  I build agentic systems and measure the ones other people ship.
+                  Previously Marketing Science Partner at Meta, where I was the AI
+                  lead for a 200-person org and a $600M client book.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
                   <button
