@@ -191,29 +191,6 @@
    ]
   },
   {
-   "name": "The Dollars Didn't Leave",
-   "date": "7/16/26",
-   "description": "A research piece on where stablecoin float actually goes when the market turns. Built from on-chain supply data rather than commentary: who issued, who redeemed, and what the gap between tokens minted and tokens issued to customers really tells you.",
-   "demo": "https://stable.neilkpatel.com",
-   "tags": [
-    "Stablecoins",
-    "On-chain Data",
-    "Research",
-    "DefiLlama"
-   ],
-   "icon": "💵",
-   "images": [
-    {
-     "src": "/screenshots/stable_dollars.png",
-     "caption": "Stablecoin float, measured rather than narrated"
-    }
-   ],
-   "highlights": [
-    "Separates the two definitions of circulation nobody distinguishes: tokens that exist on-chain versus tokens issued to customers",
-    "Uses the gap between them as a signal, with base rates from every episode in the prior year"
-   ]
-  },
-  {
    "name": "Using Claude for Investing Research",
    "date": "7/16/26",
    "description": "A field guide to doing real research with an AI assistant: what it is genuinely good at, where it quietly fails, and the verification habits that make the difference. Written from the pipelines behind it rather than from theory.",
@@ -257,28 +234,6 @@
    "highlights": [
     "Measured that only a minority of v4 pool activity pays any protocol fee, with the default fee still zero on most chains",
     "Full-text transcript search used as a falsifier: the distribution partner never once names the protocol on its own earnings call"
-   ]
-  },
-  {
-   "name": "Solidity Lab",
-   "date": "7/27/26",
-   "description": "Learning smart-contract development in public, one session at a time. Every session is logged with what was built, what broke, and what the failure actually taught.",
-   "demo": "https://solidity.neilkpatel.com",
-   "tags": [
-    "Solidity",
-    "EVM",
-    "Smart Contracts",
-    "Learning in Public"
-   ],
-   "icon": "⛓",
-   "images": [
-    {
-     "src": "/screenshots/solidity_lab.png",
-     "caption": "Every session logged, including the ones that broke"
-    }
-   ],
-   "highlights": [
-    "A running log rather than a highlight reel: the broken builds stay in"
    ]
   },
   {
