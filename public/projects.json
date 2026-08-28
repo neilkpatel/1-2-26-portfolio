@@ -24,10 +24,10 @@
         }
       ],
       "highlights": [
-        "24 grades across 22 services, each earned by actually paying the endpoint and reconciling it on-chain",
+        "665 payment receipts across 396 delivery-checked endpoints and 2,931 origins probed, every purchase settled on-chain and reconciled against the wallet",
         "Pays for itself: buyer agent catches the 402, signs an EIP-3009 authorization and settles in USDC, no gas needed",
         "Preflight: a one-call CLEAR / HOLD / ABORT verdict an agent checks before paying an unfamiliar API",
-        "Published to the official MCP Registry; 9 tools and 3,836 agent tool calls served to date",
+        "Published to the official MCP Registry; 9 tools and 5,985 agent tool calls served to date",
         "Audited its own settlement tape against the chain and found it 4.2x low, then published the correction and the method"
       ]
     },
