@@ -56,7 +56,7 @@ Professional portfolio website showcasing Neil's projects and skills.
 4. **Footer** — Build timestamp, copyright
 
 ### Adding a project (newest-first is automatic)
-Add an object to `production` or `experimental` in `public/projects.json` (the two arrays are merged + date-sorted, so the array/section no longer affects order — only `date` does). Set `date` as `"M/D/YY"` — a newer date auto-floats it to the top. Optional fields drive the card: `demo` → `visit_site()` + LIVE badge; `report` → `view_report()`; `notebook` → `view_models()`; `github` → `repo`; `images` (array of `{src,caption}`, screenshots in `public/screenshots/`) → thumbnail + `view_results()` if no demo/report. Then `npm run build` + push (Vercel auto-deploys from `main`).
+Add an object to `production` or `experimental` in `public/projects.json` (the two arrays are merged + date-sorted, so the array/section no longer affects order — only `date` does). Set `date` as `"M/D/YY"` — a newer date auto-floats it to the top. Optional fields drive the card: `demo` → `visit_site()` + LIVE badge; `report` → `view_report()`; `notebook` → `view_models()`; `github` → `repo`; `images` (array of `{src,caption}`, screenshots in `public/screenshots/`) → thumbnail. With no demo/report, the main button is `view_code()` (opens `github`, and the separate `repo` pill is hidden) or, if there's no repo either, `view_screenshot()`. `view_results()` was retired 9/15/26 because it just opened a PNG. Then `npm run build` + push (Vercel auto-deploys from `main`).
 
 ---
 

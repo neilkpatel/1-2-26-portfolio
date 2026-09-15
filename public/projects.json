@@ -256,6 +256,7 @@
       "name": "Baton",
       "date": "6/27/26",
       "description": "A macOS menu-bar command center for the AI agents you have running. It reads the signals Claude Code and Codex already emit, so there's nothing to enter by hand, and shows you the one that matters: whichever agent finished its leg and is now waiting on you (\"the baton's with you\").",
+      "github": "https://github.com/neilkpatel/baton",
       "images": [
         {
           "src": "/screenshots/baton.png",

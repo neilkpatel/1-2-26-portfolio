@@ -386,15 +386,24 @@ function App() {
                           view_models()
                         </button>
                       )}
-                      {project.images && !project.demo && !project.report && (
+                      {/* No live site or report: the code is the thing to see, so the main button goes to the repo */}
+                      {!project.demo && !project.report && project.github && (
+                        <button
+                          onClick={() => window.open(project.github, '_blank')}
+                          className="flex-1 min-w-[8rem] text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
+                        >
+                          view_code()
+                        </button>
+                      )}
+                      {project.images && !project.demo && !project.report && !project.github && (
                         <button
                           onClick={() => window.open(project.images[0].src, '_blank')}
                           className="flex-1 min-w-[8rem] text-center px-4 py-2 bg-green-500 text-black rounded font-mono text-sm font-medium hover:bg-green-400 transition-colors cursor-pointer"
                         >
-                          view_results()
+                          view_screenshot()
                         </button>
                       )}
-                      {project.github && (
+                      {project.github && (project.demo || project.report) && (
                         <a
                           href={project.github}
                           target="_blank"
